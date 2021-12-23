@@ -154,7 +154,7 @@
 ## 06. Type of Literal and Suffix
 - Suffix and Prefix of Literal  
   | Type     | Literal                      | Prefix                              | 
-  | ________ | ____________________________ | ___________________________________ | 
+  | -------- | ---------------------------- | ----------------------------------- | 
   | logical  | false, true                  | x                                   | 
   | integer  | 123, 0b0101, 007, 0xFF, 100L | <span style="color:red">L</span>    | 
   | real     | 3.14, 3.0e8, 1.4f, 0x1.0p-1  | <span style="color:red">f</span>, d | 
