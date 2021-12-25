@@ -1,0 +1,127 @@
+# **Variable**
+  
+<br>
+
+## 12. Output using printf
+- printf() : formatted output, **No line breaks** after output
+  - Disadvantages of println() : Cannot be specified output format
+    - 실수의 자릿수 조절 불가
+      ```
+      System.out.println(10/3);    // 3 (int % int = int)
+      System.out.println(10.0/3);  // 3.3333...
+      ```
+    - Output only in decimal
+      ```
+      System.out.println(0x1A);  // 26
+      ```  
+  - Output format can be specified with printf()
+    ```
+    System.out.printf("%.2f", 10.0/3);  // 3.33
+    System.out.printf("%.d", 0x1A);     // 26
+    System.out.printf("%.x", 0x1A);     // 1A
+    ```
+    - JavaAPI : Formatter  
+      | Format Specifier | Explain Output as type |
+      | ---------------- | ------- |
+      | %b               | <span style='color:red'>b</span>oolean |
+      | %d               | <span style='color:red'>d</span>ecimal integer |
+      | %o               | <span style='color:red'>o</span>ctal integer |
+      | %x, %X           | he<span style='color:red'>x</span>adecimal integer  |
+      | %f               | <span style='color:red'>f</span>loating point (real) |
+      | %e, %E           | <span style='color:red'>e</span>xponent (real) | 
+      | %c               | <span style='color:red'>c</span>haracter | 
+      | %s               | <span style='color:red'>s</span>tring |
+    - Output integer to decimal, octal, and hexadecimal
+      ```
+      System.out.printf("%d", 15);  // 15 : decimal
+      System.out.printf("%o", 15);  // 17 : octal
+      System.out.printf("%x", 15);  // f  : hexadecimal
+      System.out.printf("%s", Integer.toBinaryString(15));  // 1111 : binary
+      ```
+    - Prefix octal and hexadecimal
+      ```
+      System.out.printf("%#o", 15);  // 017 
+      System.out.printf("%#x", 15);  // 0xf 
+      System.out.printf("%#X", 15);  // 0xF
+      ```
+    - 실수 출력을 위한 지시자 %f - 지수형식(%e), 간략한 형식(%g)
+      ```
+      float f = 123.4567890f;
+      System.out.printf("%f", f);  // 123.456787   : 소수점 아래 6자리
+                                   // 정밀도 7자리
+      System.out.printf("%e", f);  // 1.234568e+02 : 지수형식
+                                   // 반올림
+      System.out.printf("%g", 123.456789);  // 123.457
+      System.out.printf("%g", 0.00000001);  // 1.00000e-8
+      ```
+    - printf()의 지시자 (3/3)
+      ```
+      System.out.printf("[%5d]%n", 10);   // [   10] : 5자리 수
+      System.out.printf("[%-5d]%n", 10);  // [10   ] : left align
+      System.out.printf("[%05d]%n", 10);  // [00010] : fill zeros
+
+      System.out.printf("[%s]%n", url);
+      System.out.printf("[%20s]%n", url);
+      System.out.printf("[%-20s]%n", url);
+      System.out.printf("[%.8s]%n", url);   // 부분출력
+      ```
+
+## 13. Example of Output using printf
+- Ex2_9
+    ```
+    public class Ex2_9 {
+        public static viod main(String[]args){
+            String url = "www.codechobo.com";
+            float f1 = .10f;  // 0.10, 1.0e-1
+            float f2 = 1e1f;  // 10.0, 1.0e1, 1.0e+1
+            float f3 = 3.14e3f;
+            double d = 1.23456789;
+
+            System.out.printf("f1= %f, %e, %g%n", f1, f1, f1);
+            System.out.printf("f2= %f, %e, %g%n", f2, f2, f2);
+            System.out.printf("f3= %f, %e, %g%n", f3, f3, f3);
+            System.out.printf("d=%f%n", d);
+            System.out.printf("d=%14.10f%n", d);  // 전체 14자리 중 소수점 10자리
+            System.out.printf("[12345678901234567890]%n");
+            System.out.printf("[%s]%n", url);
+            System.out.printf("[%20s]%n", url);
+            System.out.printf("[%-20s]%n", url);  
+            System.out.printf("[%.8s]%n", url);   
+        }
+    }
+    ```
+
+  - Ex2_9 Result
+    ```
+    f1= 0.100000, 1.000000e-01, 0.100000
+    f2= 10.000000, 1.000000e+01, 10.0000
+    f3= 3140.000000, 3.140000e+03, 3140.00
+    d=1.2345678 ← 마지막 자리 반올림됨
+    d=  1.2345678900
+    [12345678901234567890]
+    [www.codechobo.com]
+    [   www.codechobo.com]
+    [www.codechobo.com   ]
+    [www.code]
+
+    ```
+
+<br>
+<hr>
+<br>
+
+## 14. Input from the screen
+
+<br>
+<hr>
+<br>
+
+## 15. Overflow of Integer Type
+
+## 16. Overflow of Signed Integer
+
+<br>
+<hr>
+<br>
+
+## 17. Convert between Types
