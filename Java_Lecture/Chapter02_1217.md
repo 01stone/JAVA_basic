@@ -103,15 +103,51 @@
     [   www.codechobo.com]
     [www.codechobo.com   ]
     [www.code]
-
     ```
+
 
 <br>
 <hr>
 <br>
 
 ## 14. Input from the screen
+- What is Scanner?
+  - Java User input
+  - The Scanner class is used to get user input, and it is found ton the ```java.util``` package.
+- How to use?
+  - Add import statements
+    - The import statement allows you to import all the functions from a module into your code.
+    - ```import java.util.*```
+  - Create Scanner object
+    - ```Scanner scanner = new Scanner(System.in);```
+    - ```(System.in)``` : screen input
+  - Use Scanner object
+    - ```int num = scanner.nextInt();``` : Save the int input from the screen to ```num```
+    - ```String input = scanner.nextLine();``` : Save the input from the screen to ```input```
+    - ```int num = integer.parseInt(input);``` : Convert string(input) to num(num)
+- Ex2_10
+  ```
+  public class Ex2_10 {
+      public static viod main(String[]args){
+          Scanner scanner = new scanner(System.in);
 
+          System.out.print("두자리 정수를 하나 입력해주세요.>")
+          String input = scanner.nextline();
+          int num = Integer.parseInt(input);
+
+          System.out.println("입력내용 :"+input);
+          System.out.printf("num=%d%n", num);   
+      }
+  }
+  ```
+
+  - Ex2_10 Result
+    ```
+    두자리 정수를 하나 입력해주세요.>22
+    입력내용 :22
+    num=22
+    ```
+ 
 <br>
 <hr>
 <br>
