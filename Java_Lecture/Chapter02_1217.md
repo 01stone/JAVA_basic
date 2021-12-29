@@ -153,10 +153,24 @@
 <br>
 
 ## 15. Overflow of Integer Type
+- What is Overflow?
+  - Overflow occurs when we assign such a value to a variable which is more than maximum permissible value
+    |   |   |   |   | decimal      |   |   |   |   | binary       |
+    |---|---|---|---|--------------|---|---|---|---|--------------|
+    | 0 | 0 | 0 | 0 |              | 0 | 0 | 0 | 0 |              |
+    | 0 | 0 | 0 | 1 |              | 0 | 0 | 0 | 1 |              |
+    | 0 | 0 | 0 | 2 |              | 0 | 0 | 1 | 0 |              |
+    |  |  |  |  |  |  |  |  |  |  |
+    | 9 | 9 | 9 | 8 |              | 1 | 1 | 1 | 0 |              |
+    | 9 | 9 | 9 | 9 | **overflow** | 1 | 1 | 1 | 1 | **overflow** |
+    | 0 | 0 | 0 | 0 |              | 0 | 0 | 0 | 0 |              |
+    | 0 | 0 | 0 | 1 |              | 0 | 0 | 0 | 1 |              |
+  - Maximum + 1 → Minimum  
+    Minimum - 1 → Maximum  
 
 ## 16. Overflow of Signed Integer
-
-
+- Unsigned integer(4bit) : 0 ~ 15  
+  Signed integer  (4bit) : -8 ~ 7
 
 - Ex2_11
   ```
@@ -188,6 +202,9 @@
     cMax  = 65535
     cMax+1= 0
     ```
+- Expression range (16bit : 2<sup>16</sup>)
+  - short type : -2<sup>15</sup> ~ 2<sup>15</sup>-1
+  - char  type : 0 ~ 2<sup>16</sup>-1
 <br>
 <hr>
 <br>
