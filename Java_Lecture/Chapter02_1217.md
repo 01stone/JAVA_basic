@@ -209,4 +209,49 @@
 <hr>
 <br>
 
-## 17. Convert between Types
+## **17. Convert between Types**
+1. convert number to character  
+   - add '0' to number  
+     ```(char)(3 + '0') → '3'```
+2. convert character to number
+   - Subtract '0' to character  
+     ```'3' - '0' → 3```
+3. convert number to string
+   - add empty string("") to number  
+     ```3 + "" → "3"```
+4. convert string to number
+   - Use ```Ingeger.parseInt()``` or ```Double.parseDouble()```  
+     ```
+     Ingeger.parseInt("3") → 3
+     Double.parseDouble("3.14") → 3.14
+     ```
+5. convert string to character
+   - Use ```charAt(0)```  
+     ```"3".charAt(0) → '3'```
+6. convert character to string
+   - Add empty string("")  
+     ```'3' + "" → "3"```
+   
+- Ex2_12
+  ```
+  public class Ex2_12 {
+      public static viod main(String[]args){
+          String str = "3";
+
+          System.out.println(str.charAt(0) - '0');
+          System.out.println('3' - '0' + 1);
+          System.out.println(Integer.parseInt("3") + 1);
+          System.out.println("3" + 1);
+          System.out.println((char)(3 + '0')); 
+      }
+  }
+  ```
+
+  - Ex2_12 Result
+    ```
+    3
+    4
+    4
+    31
+    3
+    ```
