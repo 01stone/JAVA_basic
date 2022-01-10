@@ -141,9 +141,8 @@
 <br>
 
 ## 15. 논리 연산자 && ||
-```
-조건식을 연결할 때 사용하는 연산자
-```
+>조건식을 연결할 때 사용하는 연산자
+
 - ```||```(OR결합)  : 피연산자 중 어느 한 쪽이 true이면 true  
  ```&&```(AND결합) : 피연산자 양쪽 모두 true여야 true  
 
@@ -187,9 +186,8 @@
     ```
 
 ## 16. 논리 부정 연산자 !
-```
-true를 false로, false는 true로 바꿈
-```
+>true를 false로, false는 true로 바꿈
+
 
 <center> 
     <img src="./image/Chap3_16.PNG" height=30% width=30%>
@@ -235,14 +233,74 @@ true를 false로, false는 true로 바꿈
 <br>
 
 ## 17. 조건 연산자
+> ```?``` : 조건식의 결과에 따라 연산결과를 달리한다.
+- 조건식, 식1, 식2 모두 세 개의 피연산자를 필요로 하는 **삼항 연산자**  
+(삼항 연산자는 조건 연산자 하나)  
+    <center> 
+      <img src="./image/Chap3_17.PNG" height=30% width=30%>
+    </center>
+- ```if```문을 간결하게 표현할 수 있음
+    <center> 
+      <img src="./image/Chap3_17_2.PNG" height=80% width=80%>
+    </center>
 
+- Ex3_17
+    ```
+    class Ex3_17 {
+        public static viod main(String[]args){
+            
+            int  x, y, z;
+            int  absX, absY, absZ;
+            char signX, signY, signZ;
+
+            x = 10;
+            y = -5;
+            z = 0;
+
+            absX = x >= 0 ? x : -x;  // x의 값이 음수이면, 양수로 만든다.
+            absY = y >= 0 ? y : -y;
+            absZ = z >= 0 ? z : -z;
+            signX = x > 0 ? '+' : ( x==0 ? ' ' : '-');  // 조건 연산자를 중첩
+            signY = y > 0 ? '+' : ( y==0 ? ' ' : '-'); 
+            signZ = z > 0 ? '+' : ( z==0 ? ' ' : '-'); 
+
+            System.out.printf("x=%c%d%n", signX, absX);
+            System.out.printf("y=%c%d%n", signY, absY);
+            System.out.printf("z=%c%d%n", signZ, absZ);
+            }
+    }
+    ```
+
+  - Ex3_17 Result
+    ```
+    x=+10
+    y=-5
+    z= 0
+    ```
 
 ## 18. 대입 연산자
+> ```=``` : 오른쪽 피연산자를 왼쪽 피연산자에 저장 후, 저장된 값을 반환    
+(모든 연산자는 결과값을 반환)  
 
+  <center> 
+    <img src="./image/Chap3_18.PNG" height=25% width=25%>
+  </center>  
+
+
+- lvalue 
+    - left value. 대입 연산자의 왼쪽 피연산자. (저장공간 : 변수, 배열)
+    - 변수처럼 값을 변경할 수 있는 것 
+        - 리터럴이나 상수는 불가능
+        - 변수 앞에 ```final```을 붙이면 상수가 되므로 불가능
+- rvalue 
+    - right value. 대입 연산자의 오른쪽 피연산자
+    - 변수뿐만 아니라 식이나 상수 등이 모두 가능
 
 ## 19. 복합 대입 연산자
-
-
+> 대입 연산자와 다른 연산자를 하나로 축약
+  <center> 
+    <img src="./image/Chap3_19.PNG" height=50% width=50%>
+  </center>  
 <br>
 <hr>
 <br>
