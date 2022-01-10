@@ -69,7 +69,7 @@
 ## 13. Example of Output using printf
 - Ex2_9
     ```
-    public class Ex2_9 {
+    class Ex2_9 {
         public static viod main(String[]args){
             String url = "www.codechobo.com";
             float f1 = .10f;  // 0.10, 1.0e-1
@@ -127,7 +127,9 @@
     - ```int num = integer.parseInt(input);``` : Convert string(input) to num(num)
 - Ex2_10
   ```
-  public class Ex2_10 {
+  import java.util.Scanner;
+
+  class Ex2_10 {
       public static viod main(String[]args){
           Scanner scanner = new scanner(System.in);
 
@@ -174,7 +176,7 @@
 
 - Ex2_11
   ```
-  public class Ex2_11 {
+  class Ex2_11 {
       public static viod main(String[]args){
           short sMin = -32768, sMax = 32767;
           char cMin = 0, cMax = 65535;
@@ -234,7 +236,7 @@
    
 - Ex2_12
   ```
-  public class Ex2_12 {
+  class Ex2_12 {
       public static viod main(String[]args){
           String str = "3";
 
@@ -255,3 +257,9 @@
     31
     3
     ```
+
+<br>
+<hr>
+<br>
+
+Java의 정석 기초편 | 남궁성 | 도우출판

@@ -61,7 +61,7 @@
   ```
 - Ex3_1
     ```
-    public class Ex3_1 {
+    class Ex3_1 {
         public static viod main(String[]args){
             int x, y;
             x = y = 3; // y에 3이 저장된 후, x에 3 저장
@@ -92,7 +92,7 @@
 - When the 증감연산자 is used independently, there is no differece between prifix and postfix
 - Ex3_2
     ```
-    public class Ex3_2 {
+    class Ex3_2 {
         public static viod main(String[]args){
             int i=5, j=0;
 
@@ -116,7 +116,7 @@
     ```
 - Ex3_3
     ```
-    public class Ex3_3 {
+    class Ex3_3 {
         public static viod main(String[]args){
             int i=5, j=5;
             System.out.println(i++);
@@ -138,7 +138,7 @@
   ```+``` : nothing
 - Ex3_4
     ```
-    public class Ex3_4 {
+    class Ex3_4 {
         public static viod main(String[]args){
             int i = -10;
             i = +i;
@@ -177,7 +177,7 @@
     ```
 - Ex3_5
     ```
-    public class Ex3_5 {
+    class Ex3_5 {
         public static viod main(String[]args){
             double d = 85.4;
             int score = (int)d;
@@ -192,3 +192,9 @@
     score=85
     d=85.4
     ```
+
+<br>
+<hr>
+<br>
+
+Java의 정석 기초편 | 남궁성 | 도우출판

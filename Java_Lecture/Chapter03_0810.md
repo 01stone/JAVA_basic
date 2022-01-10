@@ -74,7 +74,7 @@
    ```
 - Ex3_6
     ```
-    public class Ex3_6 {
+    class Ex3_6 {
         public static viod main(String[]args){
             int a = 10;
             int b = 4;
@@ -131,7 +131,7 @@
 
 - Ex3_7
     ```
-    public class Ex3_7 {
+    class Ex3_7 {
         public static viod main(String[]args){
             
             System.out.prinln(5/2);  
@@ -148,7 +148,7 @@
 - 큰 자료형의 값을 작은 자료형의 변수에 저장하려면 명시적으로 형변환 연산자를 사용해서 변환해줘야 함
 - Ex3_8
     ```
-    public class Ex3_8 {
+    class Ex3_8 {
         public static viod main(String[]args){
             
             byte a = 10;
@@ -164,7 +164,7 @@
     ```
 - Ex3_9
     ```
-    public class Ex3_9 {
+    class Ex3_9 {
         public static viod main(String[]args){
             
             int a = 1_000_000;
@@ -184,7 +184,7 @@
     ```
 - Ex3_10
     ```
-    public class Ex3_10 {
+    class Ex3_10 {
         public static viod main(String[]args){
             
             long a =  1_000_000 * 1_000_000;
@@ -200,3 +200,9 @@
     a=-727379968
     b=1000000000000
     ```
+
+<br>
+<hr>
+<br>
+
+Java의 정석 기초편 | 남궁성 | 도우출판

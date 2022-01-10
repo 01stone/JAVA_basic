@@ -9,7 +9,7 @@
 - Java is **case-sensitive**
 - Ex2_1
     ```
-    public class Ex2_1 {
+    class Ex2_1 {
         public static viod main(String[]args){
             System.out.println("Hello, World");
             System.out.print("Hello")
@@ -25,7 +25,7 @@
     ```
 - Ex2_2
     ```
-    public class Ex2_2 {
+    class Ex2_2 {
         public static viod main(String[]args){
             System.out.print("3 + 5 = ")
             System.out.println(3+5);
@@ -42,7 +42,7 @@
 
 - Ex2_3
     ```
-    public class Ex2_3 {
+    class Ex2_3 {
         public static viod main(String[]args){
             System.out.println(5+3);
             System.out.println(5-3);
@@ -101,7 +101,7 @@
     ```
 - Ex2_4
     ```
-    public class Ex2_4 {
+    class Ex2_4 {
         public static viod main(String[]args){
             int x = 5;
             System.out.println(x);
@@ -118,7 +118,7 @@
     ```
 - Ex2_5
     ```
-    public class Ex2_5 {
+    class Ex2_5 {
         public static viod main(String[]args){
             int x = 10, y = 5;
             System.out.println(x+y);
@@ -162,7 +162,7 @@
     - Logical : true, false
 - Ex2_6
   ```
-  public class Ex2_6 {
+  class Ex2_6 {
       public static viod main(String[]args){
           int x = 100;
           double pi = 3.14;
@@ -300,7 +300,7 @@
     ```
 - Ex2_7
   ```
-  public class Ex2_7 {
+  class Ex2_7 {
       public static viod main(String[]args){
           String name = "Ja" + "va";
           String str = name + 8.0;
@@ -348,7 +348,7 @@
   ```
 - Ex2_8
   ```
-  public class Ex2_8 {
+  class Ex2_8 {
       public static viod main(String[]args){
           int x = 10, y = 5;
           System.out.println("x="+x);
