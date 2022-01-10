@@ -3,9 +3,9 @@
 <br>
 
 ## 11. Math.round()로 반올림하기
-```
-실수를 소수점 첫째자리에서 반올림한 정수를 반환
-```
+
+>실수를 소수점 첫째자리에서 반올림한 정수를 반환
+
 - ```
     Math.round(pi * 1000) / 1000.0
     → Math.round(3.141592 * 1000) / 1000.0
@@ -44,9 +44,8 @@
     ```
 
 ## 12. 나머지 연산자 
-```
-오른쪽 피연산자로 나누고 남은 나머지를 반환
-```
+>오른쪽 피연산자로 나누고 남은 나머지를 반환
+
 - Ex3_12
     ```
     class Ex3_12 {
@@ -91,9 +90,8 @@
 <br>
 
 ## 13. 비교 연산자
-```
-두 피연산자를 비교해서 true 또는 false를 반환
-```
+>두 피연산자를 비교해서 true 또는 false를 반환
+
 - 대소비교 연산자 : ```< > <= >=```
     <center> 
       <img src="./image/Chap3_13_operator.PNG" height=90% width=90%>
@@ -102,11 +100,12 @@
     <center> 
       <img src="./image/Chap3_13_operator_2.PNG" height=90% width=90%>
     </center>
+  
+    
 
 ## 14. 문자열의 비교
-```
-문자열 비교에는 == 대신 equals()를 사용
-```
+>문자열 비교에는 == 대신 equals()를 사용
+
 - Ex3_14
     ```
     class Ex3_14 {
@@ -187,9 +186,61 @@
     입력하신 문자는 영문자입니다.
     ```
 
-## 16. 
+## 16. 논리 부정 연산자 !
+```
+true를 false로, false는 true로 바꿈
+```
+
+<center> 
+    <img src="./image/Chap3_16.PNG" height=30% width=30%>
+</center>
+
+- Ex3_16
+    ```
+    class Ex3_16 {
+        public static viod main(String[]args){
+            
+            boolean b = true; 
+            char ch = 'C';
+            
+            System.out.printf("b=%b%n", b);
+            System.out.printf("!b=%b%n", !b);
+            System.out.printf("!!b=%b%n", !!b);
+            System.out.printf("!!!b=%b%n", !!!b);
+            System.out.println();
+
+            System.out.printf("ch=%c%n", ch);
+            System.out.printf("ch < 'a' || ch > 'z'=%b%n", ch < 'a' || ch > 'z');
+            System.out.printf("!('a'<=ch && ch<='z')=%b%n", !('a'<= ch && ch<='z'));
+            System.out.printf("  'a'<=ch && ch<='z' =%b%n", 'a'<=ch && ch<='z');
+            }
+    }
+    ```
+
+  - Ex3_16 Result
+    ```
+    b=true
+    !b=false
+    !!b=true
+    !!!b=false
+
+    ch=C
+    ch < 'a' || ch > 'z'=true
+    !('a'<=ch && ch<='z')=true
+      'a'<=ch && ch<='z' =false
+    ```
+
+<br>
+<hr>
+<br>
+
+## 17. 조건 연산자
 
 
+## 18. 대입 연산자
+
+
+## 19. 복합 대입 연산자
 
 
 <br>
