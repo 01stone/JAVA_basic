@@ -193,7 +193,7 @@
     [3, 4, 8, 10, 1, 10, 6, 2, 7, 1]
     [100, 95, 80, 70, 60]
     [a, b, c, d]
-    [I@14318bb
+    [I@14318bb // 실행 때마다 달라질 수 있음
     abcd
     ```
 <br>
@@ -201,6 +201,8 @@
 <br>
 
 ## 08. 배열의 활용(1) - 총합과 평균
+> 배열의 모든 요소를 더해서 총합과 평균을 구함
+
 - Ex5_2
     ```
     class Ex5_2 {
@@ -227,6 +229,7 @@
     평균 : 95.6
     ```
 ## 09. 배열의 활용(2) - 최대값과 최소값
+> 배열의 요소 중에서 가장 큰 값과 가장 작은 값을 찾음
 - Ex5_3
     ```
     class Ex5_3 {
@@ -261,6 +264,7 @@
 
 
 ## 10. 배열의 활용(3) - 섞기(shuffle)
+>배열의 요소의 순서를 반복해서 바꿈
 - Ex5_4
     ```
     import java.util.Arrays;
@@ -334,21 +338,92 @@
 <br>
 
 ## 12. String배열의 선언과 생성
-## 13. String배열의 초기화
+- int 배열의 선언과 생성방법이 다르지 않음
 
+    ```
+    String[] name = new String[3];  // 3개의 문자열을 담을 수 있는 배열 생성
+                                    // 참조형의 기본값인 null이 들어감
+    ```
+
+    <center> 
+      <img src="./image/Chap5_12.PNG" height=50% width=50%>
+    </center>
+
+
+## 13. String배열의 초기화
+- int배열과 동일한 방법
+    ```
+    String[] name = new String[3];  // 길이가 3인 String 배열 생성
+    name[0] = "Kim";
+    name[1] = "Park";
+    name[2] = "Yi";
+    ```
+
+    ```
+    String[] name = {"Kim", "Park", "Yi"};
+    ```
+- Ex5_6
+    ```
+    class Ex5_6 {
+        public static viod main(String[]args){
+
+            String[] names = {"Kim", "Park", "Yi"};
+
+            for(int i=0; i < names.length;i++)
+                System.out.println("names["+i+"]:"+names[i]);
+
+            String tmp = names[2]; // 배열 names의 세 번째요소를 tmp에 저장
+            System.out.println("tmp:"+tmp);
+            names[0] = "Yu"; // 배열 names의 첫 번째 요소를 "Yu"로 변경
+
+            for(int i=0; i < names.length;i++)
+                System.out.println(names[i]);
+        }
+    }
+    ```
+
+  - Ex5_6 Result
+    ```
+    names[0]:Kim
+    names[1]:Park
+    names[2]:Yi
+    tmp:Yi
+    Yu
+    Park
+    Yi
+    ```
 <br>
 <hr>
 <br>
 
 ## 14. String클래스
+1. ```String```클래스는 char배열에 기능(메서드)를 추가한 것  
+
+    ```
+    String클래스 = char[] + 메서드(기능)
+    ```
+2. ```String```클래스는 내용을 변경할 수 없음 <span style='color:red'>read only</span>
+
 ## 15. String클래스의 주요 메서드
+<center> 
+    <img src="./image/Chap5_15.PNG" height=90% width=90%>
+</center>
 
-
-
-
-
-
-
+- ```charAt()```
+  
+    <center> 
+      <img src="./image/Chap5_15_ex1.PNG" height=90% width=90%>
+    </center>
+- ```length()```
+    ```
+    str.length() = 5
+    ```
+- ```substring()```
+    ```
+    String str = "012345";
+    String tmp = str.substring(1,4); // str에서 index 1~4 범위의 문자 반환
+    System.out.println(tmp);         // "123"
+    ```
 <br>
 <hr>
 <br>
