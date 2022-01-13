@@ -260,20 +260,24 @@
 - 클래스 : 속성과 기능으로 정의, 데이터 + 함수, 사용자 정의
 - 프로그래밍 언어에서 데이터 처리를 위한 데이터 저장형태의 발전 과정
   1. 변수 : 하나의 데이터를 저장할 수 있는 공간  
+   
       <center> 
-        <img src="./image/Chap6_9_1.PNG" height=15% width=15%>
+       <img src="./image/Chap6_9_1.PNG" height=15% width=15%>
       </center>
   2. 배열 : <span style='color:blue'>같은 종류</span>의 여러 데이터를 하나의 집합으로 저장할 수 있는 공간  
+   
       <center> 
-        <img src="./image/Chap6_9_2.PNG" height=15% width=15%>
+       <img src="./image/Chap6_9_2.PNG" height=15% width=15%>
       </center>
   3. 구조체 : 서로 관련된 여러 데이터를 <span style='color:blue'>종류에 관계없이</span> 하나의 집합으로 저장할 수 있는 공간  
+   
       <center> 
-        <img src="./image/Chap6_9_3.PNG" height=15% width=15%>
+       <img src="./image/Chap6_9_3.PNG" height=15% width=15%>
       </center>
   4. 클래스 : 데이터와 함수의 결합(구조체 + 함수)  
+   
       <center> 
-        <img src="./image/Chap6_9_4.PNG" height=30% width=30%>
+       <img src="./image/Chap6_9_4.PNG" height=30% width=30%>
       </center>
 
 - 자바와 같은 객체지향언어에서 변수(데이터)와 함수를 하나의 클래스에 정의하여 서로 관계가 깊은 변수와 함수를 함께 다룰 수 있게 했음
