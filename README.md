@@ -36,6 +36,8 @@ YouTube강의 : [자바의 정석 - 기초편](https://www.youtube.com/watch?v=f
 [week4 | Chap7 : 31 ~ 41](Java_Lecture/Chapter07_3141.md)  
 [week4 | Chap7 : 42 ~ 52](Java_Lecture/Chapter07_4252.md)  
 ### Chap 08 : 예외처리
+[week5 | Chap8 : 01 ~ 10](Java_Lecture/Chapter08_0110.md)  
+[week5 | Chap8 : 11 ~ 19](Java_Lecture/Chapter08_1119.md)  
 ### Chap 09 : java.lang패키지와 유용한 클래스
 
 ## 2권
