@@ -141,7 +141,7 @@
 - 예제 8_6
 ## 10. Checked예외, unchecked예외
 - checked예외 : 컴파일러가 예외 처리 여부를 체크(예외 처리 필수) - Exception(try-catch 필수)
-- unchecked예외 : 컴파일러가 예외 처리 여부를 체그 안함(예외 처리 선택) - RuntimeException
+- unchecked예외 : 컴파일러가 예외 처리 여부를 체크 안함(예외 처리 선택) - RuntimeException
 - 예제 8_7
 - 예제 8_8
 
