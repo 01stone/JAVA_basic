@@ -335,10 +335,21 @@
 
 ## 26. static 메서드와 인스턴스 메서드
 > 메서드 앞에 ```static```이 붙어있으면 클래스메서드(iv 사용x), 붙어있지 않으면 인스턴스메서드(iv 사용)  
-  
-<center>
-    <img src="./image/Chap6_26_1.PNG" height=70% width=70%>
-</center>
+  ```
+  class MyMath2{
+    long a, b;
+
+    long add() {                      // 인스턴스 메서드
+      return a+b;
+    }
+
+    static long add(long a, long b) { // 클래스(static) 메서드
+      return a+b;
+    }
+  }
+
+  ```  
+
 
 - 인스턴스 메서드
   - 인스턴스 생성 후, ```참조변수.메서드이름()```으로 호출
@@ -348,11 +359,18 @@
   - 객체생성없이  ```클래스이름.메서드이름()```으로 호출
   - 인스턴스 멤버(iv, im)와 관련없는 작업을 하는 메서드
   - 메서드 내에서 인스턴스변수 사용 불가
-
-<center>
-    <img src="./image/Chap6_26_2.PNG" height=70% width=70%>
-</center>
-
+   
+    ```
+    class MyMathTest2{
+      public static viod main(String args[]) {
+        System.out.println(MyMath2.add(200L, 100L);  // 클래스메서드 호출)
+        MyMath2 mm = new MyMath2();    // 인스턴스 생성
+        mm.a = 200L;
+        mm.b = 100L;
+        System.out.println(mm.add());  // 인스턴스메서드 호출
+      }
+    }
+    ```
 
   
 ## 27. static 메서드와 인스턴스 메서드 예제
