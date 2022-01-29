@@ -1,7 +1,9 @@
 # **Object-oriented Programming 2**
   
 <br>
-    
+
+[[자바의 정석 - 기초편] ch7-15, 16 import문, static import문](https://www.youtube.com/watch?v=BS1Pxm5XVNM&list=PLW2UjW795-f5JPTsYHGAawAck9cQRw5TD&index=26)
+
 ## 15. import 문
 > 클래스를 사용할 때 패키지이름을 생략할 수 있음
 - 컴파일러에게 클래스가 속한 패키지를 알려줌
@@ -45,6 +47,11 @@ import static java.lang.System.out;  // System.out을 out만으로 참조 가능
   
 
 
+<br>
+<hr>
+<br>
+
+[]()
 
 
 ## 17. 제어자(modifier)
@@ -78,6 +85,11 @@ import static java.lang.System.out;  // System.out을 out만으로 참조 가능
 
 
 
+<br>
+<hr>
+<br>
+
+[]()
 
 
 ## 21. 접근 제어자 (access modifier)
@@ -94,6 +106,11 @@ import static java.lang.System.out;  // System.out을 out만으로 참조 가능
 
 
 
+<br>
+<hr>
+<br>
+
+[]()
 
 
 
@@ -105,6 +122,11 @@ import static java.lang.System.out;  // System.out을 out만으로 참조 가능
 
 
 
+<br>
+<hr>
+<br>
+
+[]()
 
 
 ## 23. 다형성(polymorphism) - 중요
@@ -138,6 +160,11 @@ import static java.lang.System.out;  // System.out을 out만으로 참조 가능
 
 
 
+<br>
+<hr>
+<br>
+
+[]()
 
 
 ## 24. 참조변수의 형변환
@@ -152,6 +179,11 @@ import static java.lang.System.out;  // System.out을 out만으로 참조 가능
 
 
 
+<br>
+<hr>
+<br>
+
+[]()
 
 
 ## 26. instanceof 연산자
@@ -169,6 +201,11 @@ import static java.lang.System.out;  // System.out을 out만으로 참조 가능
 
 
 
+<br>
+<hr>
+<br>
+
+[]()
 
 
 ## 27. 매개변수의 다형성
@@ -189,3 +226,10 @@ import static java.lang.System.out;  // System.out을 out만으로 참조 가능
   
 ## 30. 여러 종류의 객체 배열로 다루기 예제
 - 예제 7_9
+
+
+<br>
+<hr>
+<br>
+
+Java의 정석 기초편 | 남궁성 | 도우출판
