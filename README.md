@@ -43,7 +43,6 @@ YouTube강의 : [자바의 정석 - 기초편](https://www.youtube.com/watch?v=f
 [week6 | Chap9 :  ~ ]
 ### 객체지향 프로그래밍 요약
 [week6 | Google docs](https://docs.google.com/document/d/1Hvbe9JM5gXNwo0WhpwogiCBSRTBPinPDR8hKotNs3hA/edit?usp=sharing)
+  
 ## 2권 
 
-- 단축키  
-    ```import``` 자동 생성 : ```ctrl``` + ```shift``` + ```o```
