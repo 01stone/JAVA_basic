@@ -2,7 +2,7 @@
   
 <br>
 
-[[자바의 정석 - 기초편]ch6-30,31 오버로딩](https://www.youtube.com/watch?v=2rDeHSO4bdw&list=PLW2UjW795-f5JPTsYHGAawAck9cQRw5TD&index=16)     
+[[자바의 정석 - 기초편] ch6-30,31 오버로딩](https://www.youtube.com/watch?v=2rDeHSO4bdw&list=PLW2UjW795-f5JPTsYHGAawAck9cQRw5TD&index=16)     
 
 ## 30. 오버로딩(overloading)
 > 한 클래스 안에 같은 이름의 메서드 여러 개 정의하는 것 (과적하다)
@@ -102,7 +102,7 @@
 <hr>
 <br>
 
-[[자바의 정석 - 기초편]ch6-32,35 생성자 기본생성자](https://www.youtube.com/watch?v=HXh2ZSgg-oQ&list=PLW2UjW795-f5JPTsYHGAawAck9cQRw5TD&index=17) 
+[[자바의 정석 - 기초편] ch6-32~35 생성자, 기본 생성자](https://www.youtube.com/watch?v=HXh2ZSgg-oQ&list=PLW2UjW795-f5JPTsYHGAawAck9cQRw5TD&index=17) 
 
 ## 32. 생성자(constructor)
 > 인스턴스가 생성될 때마다 호출되는 **인스턴스 초기화 메서드**   
@@ -261,19 +261,23 @@ class Car {
 <hr>
 <br>
 
-[[자바의 정석 - 기초편]ch6-36,37 생성자 this() 참조변수 this](https://www.youtube.com/watch?v=LqCkLdlcC7M&list=PLW2UjW795-f5JPTsYHGAawAck9cQRw5TD&index=18) 
+[[자바의 정석 - 기초편] ch6-36,37 생성자 this(), 참조변수 this](https://www.youtube.com/watch?v=LqCkLdlcC7M&list=PLW2UjW795-f5JPTsYHGAawAck9cQRw5TD&index=18) 
 
 
 ## 36. 생성자에서 다른 생성자 호출하기 -  ```this()```
 > 생성자에서 다른 생성자 호출할 때 사용 (코드 중복 제거)
-> 다른 생성자 호출시 첫 줄에서만 사용가능
+- 생성자의 이름으로 클래스이름 대신 ```this``` 사용
+- 한 생성자에서 **다른 생성자 호출**시, 반드시 **첫 줄**에서만 사용가능
 
+  <center>
+      <img src="./image/Chap6_36_1.PNG" height=100% width=100%>
+  </center>
 - Ex6_13
     ```
     class Car2 {
-      String color;		// 색상
+      String color;		  // 색상
       String gearType;	// 변속기 종류 - auto(자동), manual(수동)
-      int door;			// 문의 개수
+      int door;			    // 문의 개수
 
       Car2() {
         this("white", "auto", 4);
@@ -303,46 +307,176 @@ class Car {
     ```
 
     ```
+- 매개변수를 아무것도 지정해주지 않으면 default 값으로 초기화
+  <center>
+      <img src="./image/Chap6_36_2.PNG" height=100% width=100%>
+  </center>
+
+  - 같은 클래스 내의 생성자들은 일반적으로 서로 관계가 깊은 경우가 많아 이처럼 서로 호출하도록 하여 유기적으로 연결해주면 더 좋은 코드를 얻을 수 있음
+  - 수정이 필요한 경우에 보다 적은 코드만을 변경하면 되므로 유지보수가 쉬워짐 
+
 
 ## 37. 객체 자신을 가리키는 참조변수  -  ```this```
 > 인스턴스 자신을 가리키는 참조변수, 인스턴스 주소가 저장되어 있음    
 > 모든 인스턴스메서드에 지역변수로 숨겨진 채로 존재
 
-- **인스턴스 메서드(생성자 포함)**에서 사용 가능 (클래스(static) 메서드에서 사용 불가)
+- **인스턴스 메서드(생성자 포함)** 에서 사용 가능 (클래스(static) 메서드에서 사용 불가)
 - 지역변수(lv)와 인스턴스 변수(iv)를 구별할 때 사용
-- 같은 클래스 내에서 생략 가능
-  
+    
+  <center>
+      <img src="./image/Chap6_37_1.PNG" height=100% width=100%>
+  </center>
 
+  - iv : ```참조변수.변수이름```, 같은 클래스에서는 ```참조변수``` 생략 가능
 
+- 참조변수 ```this```와 생성자 ```this()```
+  - ```this``` : 인스턴스 자신을 가리키는 **참조변수**, 인스턴스 주소 저장  
+    모든 인스턴스메서드에 지역변수로 숨겨진 채로 존재 (선언 없이 사용 가능)
+  - ```this()```, ```this(매개변수)``` : **생성자**, 같은 클래스의 다른 생성자를 호출할 때 사용  
+    클래스 이름 대신 사용
+
+    <center>
+      <img src="./image/Chap6_37_2.PNG" height=100% width=100%>
+    </center>
+
+<br>
+<hr>
+<br>
+
+[[자바의 정석 - 기초편] ch6-38~41 변수의초기화, 멤버변수의 초기화](https://www.youtube.com/watch?v=ayRKMT6x-ms&list=PLW2UjW795-f5JPTsYHGAawAck9cQRw5TD&index=19)
 
 ## 38. 변수의 초기화
-> 지역변수는 수동 초기화 해야함 (사용전, 반드시)
-- 메모리 재사용이 빈번하기 때문 
+> 지역변수는 **수동 초기화** 해야함 (사용 전, 반드시)
+
+- 변수의 초기화 : 변수를 선언하고 처음으로 값을 저장하는 것
+  
+  <center>
+    <img src="./image/Chap6_38_1.PNG" height=70% width=70%>
+  </center>
+
+  - ```i```값을 알 수 없어 에러 발생
+  - 메모리 재사용이 빈번하기 때문
   - 0으로 초기화 하는 것은 성능이 떨어지기 때문에 새로운 값으로 덮어쓰는 방식
-- 인스턴스 변수는 자동초기화 (타입에 따라 다름)
-- 멤버변수(인스턴스, 클래스)와 배열의 초기화는 선택이지만, 지역변수의 초기화는 필수
+- 멤버변수(iv, cv)는 자동 초기화
+<!-- - 인스턴스 변수는 자동초기화 (타입에 따라 다름) -->
+- 멤버변수(인스턴스, 클래스)와 배열의 초기화는 선택이지만, **지역변수의 초기화는 필수**
+- 각 타입의 기본값(default value)
+    |자료형|기본값|
+    |:---:|:---:|
+    |boolean|false|
+    |char|'\u0000'|
+    |byte, short, int|0|
+    |long|0L|
+    |float|0.0f|
+    |double|0.0d or 0.0|
+    |참조형|null|
   
 ## 39. 멤버변수의 초기화
-1. 명시적 초기화(```=```) : 대입연산자를 이용한 간단 초기화
-  - 참조형 변수 : null 기본값(초기화 아님) or 객체주소
-2. 초기화 블럭 : 복잡초기화
-  - 인스턴스 초기화 블럭 : ```{}```
-  - 클래스 초기화 블럭 : ```static{}```
-3. 생성자 : 복잡초기화
-  - iv초기화 
+1. 명시적 초기화(```=```) : 선언 시, 대입연산자를 이용한 **간단초기화**
+   
+    ```
+    class Car {
+      int door = 4;             // 기본형 변수의 초기화
+      Engine e = new Engine();  // 참조형 변수의 초기화
+      // ...
+    }
+    ``` 
+     - 참조형 변수 : null(default), 객체주소  
+        null값은 초기화가 아니므로 객체를 만들어 넣어줘야 함
+2. 초기화 블럭 : **복잡초기화**
+     - 인스턴스(iv) 초기화 블럭 : ```{}```, 인스턴스 변수가 생성될 때마다 초기화
+     - 클래스(cv) 초기화 블럭 : ```static{}```, 클래스가 처음 로딩될 때(메모리에 올라갈 때) 단 한 번 초기화
+3. 생성자 : iv초기화, **복잡초기화**
+    ```
+    Car(String color, String gearType, int door) { // 매개변수 있는 생성자
+      this.color = color;
+      this.gearType = gearType;
+      this.door = door;
+    }
+    ```
 
 - cv, iv 초기화의 종류 
   - 자동초기화 : 자동으로 0
   - 간단초기화 : ```=```
-  - 복잡초기화 : ```{}```(거의 안씀), ```static{}```(cv), 생성자(iv)
+  - 복잡초기화 : ```{}```(iv, 거의 안씀), ```static{}```(cv), 생성자(iv)
+  
+    <center>
+      <img src="./image/Chap6_39_1.PNG" height=80% width=80%>
+    </center>
+- 초기화 시첨
 
-- 클래스 변수 초기화 시점 : 클래스가 처음 로딩될 때 단 한 번 (메모리에 올라갈 때)
-- 인스턴스 변수 초기화 시점 : 인스턴스가 생성될 때마다
-- 초기화 순서
-  - cv > iv
-  - 자동 > 간단 > 복잡
+  ```
+  class InitTest {
+    static int cv = 1;  // 명시적 초기화
+    int iv = 1;         // 명시적 초기화
+
+    static { cv = 2; }  // 클래스 초기화 블럭
+    { iv = 2; }         // 인스턴스 초기화 블럭
+
+    InitTest() {  // 생성자
+      iv = 3;
+    }
+  }
+  ```
+
+  <center>
+    <img src="./image/Chap6_39_2.PNG" height=100% width=100%>
+  </center>
+
+
+  - 초기화 순서
+    - cv → iv
+    - 자동 → 간단 → 복잡
   
 ## 40. 멤버변수의 초기화 예제1
-- 예제 6-14
+- Ex6_14
+    ```
+    class Ex6_14 {
+      static {
+        System.out.println("static { }");
+      }
+
+      {
+        System.out.println("{ }");
+      }
+
+      public Ex6_14() {
+        System.out.println("ťýźşŔÚ");
+      }
+
+      public static void main(String args[]) {
+        System.out.println("Ex6_14 bt = new Ex6_14(); ");
+        Ex6_14 bt = new Ex6_14();
+
+        System.out.println("Ex6_14 bt2 = new Ex6_14(); ");
+        Ex6_14 bt2 = new Ex6_14();
+      }
+    }
+    ```
+  - Ex6_14 Result
+    ```
+
+    ```
 ## 41. 멤버변수의 초기화 예제2
-- 예제 6-15
+- Ex6_15
+    ```
+    class Ex6_15 {
+      static int[] arr = new int[10];
+
+      static {
+        for(int i=0;i<arr.length;i++) {
+          // 1과 10사이의 임의의 값을 배열 arr에 저장한다.
+          arr[i] = (int)(Math.random()*10) + 1;
+        }
+      }
+
+      public static void main(String args[]) {
+        for(int i=0; i<arr.length;i++)
+          System.out.println("arr["+i+"] :" + arr[i]);
+      }
+    }
+    ```
+  - Ex6_15 Result
+    ```
+
+    ```
