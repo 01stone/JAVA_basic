@@ -128,7 +128,6 @@
     subtract(5L, 3L) = 2
     multiply(5L, 3L) = 15
     divide(5L, 3L) = 1.6666666666666667
-    
     ```
 <br>
 <hr>
@@ -340,7 +339,7 @@
 </center>
 
 
-- 
+  
 ## 27. static 메서드와 인스턴스 메서드 예제
 
 - Ex6_9
@@ -379,7 +378,7 @@
             System.out.println(mm.subtract());
             System.out.println(mm.multiply());
             System.out.println(mm.divide());
-    }
+      }
     }
     ```
   - Ex6_9 Result
