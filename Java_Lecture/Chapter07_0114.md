@@ -289,7 +289,7 @@ class Child extends Parent {
       <img src="./image/Chap7_11_2.PNG" height=100% width=100%>
     </center>
 
-- [example](JAVA_basic\src\PointTest.java)
+- [example](././../src/PointTest.java)
   ```
   public class PointTest {
     public static void main(String args[]) {
@@ -389,7 +389,7 @@ class Child extends Parent {
 - 패키지는 소스파일의 첫 번째 문장으로 단 한 번 선언  
 - 같은 소스 파일의 클래스들은 모두 같은 패키지에 속함
 - 패키지 선언이 없으면 이름없는(unnamed) 패키지에 속함
-- [Ex7_5](JAVA_basic\src\PackageTest.java)
+- [Ex7_5](././../src/PackageTest.java)
     ```
     package  com.chap7.example;
 
