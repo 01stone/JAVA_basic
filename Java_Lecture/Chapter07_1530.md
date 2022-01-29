@@ -43,7 +43,25 @@ import static java.lang.Integer.*;   // Integer클래스의 모든 static 메서
 import static java.lang.Math.random; // Math.random()만, 괄호 안붙임
 import static java.lang.System.out;  // System.out을 out만으로 참조 가능
 ```
-- 예제 7-6
+- Ex7_6
+    ```
+    import static java.lang.System.out;
+    import static java.lang.Math.*;
+
+    class Ex7_6 {
+      public static void main(String[] args) {	
+        // System.out.println(Math.random());
+        out.println(random());
+
+        // System.out.println("Math.PI :"+Math.PI);
+        out.println("Math.PI :" + PI);
+      }
+    }
+    ```
+  - Ex7_6 Result
+    ```
+
+    ```
   
 
 
@@ -165,6 +183,7 @@ import static java.lang.System.out;  // System.out을 out만으로 참조 가능
 <br>
 
 []()
+[]()
 
 
 ## 24. 참조변수의 형변환
@@ -173,7 +192,45 @@ import static java.lang.System.out;  // System.out을 out만으로 참조 가능
 - **조상 자손 관계의 참조변수는 서로 형변환 가능**
   
 ## 25. 참조변수의 형변환 예제
-- 예제 7_7
+- Ex7_7
+    ```
+    class Ex7_7 {
+      public static void main(String args[]) {
+        Car car = null;
+        FireEngine fe = new FireEngine();
+        FireEngine fe2 = null;
+
+        fe.water();
+        car = fe;    // car = (Car)fe;에서 형변환이 생략됨
+    //		car.water();
+        fe2 = (FireEngine)car; // 자손타입 ← 조상타입. 형변환 생략 불가
+        fe2.water();
+      }
+    }
+
+    class Car {
+      String color;
+      int door;
+
+      void drive() { 	// 운전하는 기능
+        System.out.println("drive, Brrrr~");
+      }
+
+      void stop() {  	// 멈추는 기능	
+        System.out.println("stop!!!");	
+      }
+    }
+
+    class FireEngine extends Car {	// 소방차
+      void water() {	// 물을 뿌리는 기능
+        System.out.println("water!!!");
+      }
+    }
+    ```
+  - Ex7_7 Result
+    ```
+
+    ```
 - 실제 인스턴스가 무엇인지가 중요
 
 
@@ -217,7 +274,73 @@ import static java.lang.System.out;  // System.out을 out만으로 참조 가능
   - instanceof : 형변환 가능여부 확인
 
 ## 28. 매개변수의 다형성 예제
-- 예제 7_8
+- Ex7_8
+    ```
+    class Product {
+      int price;			// 제품의 가격
+      int bonusPoint;	// 제품구매 시 제공하는 보너스점수
+
+      Product(int price) {
+        this.price = price;
+        bonusPoint = (int)(price/10.0);	// 보너스점수는 제품가격의 10%
+      }
+    }
+
+    class Tv1 extends Product {
+      Tv1() {
+        // 조상클래스의 생성자 Product(int price)를 호출한다.
+        super(100);		// Tv의 가격을 100만원으로 한다.
+      }
+
+      // Object클래스의 toString()을 오버라이딩한다.
+      public String toString() { return "Tv"; }
+    }
+
+    class Computer extends Product {
+      Computer() { super(200); }
+
+      public String toString() { return "Computer"; }
+    }
+
+    class Buyer {	// 고객, 물건을 사는 사람
+      int money = 1000;	  // 소유금액
+      int bonusPoint = 0; // 보너스점수
+
+      void buy(Product p) {
+        if(money < p.price) {
+          System.out.println("잔액이 부족하여 물건을 살 수 없습니다.");
+          return;
+        }
+
+        money -= p.price;            // 가진 돈에서 구입한 제품의 가격을 뺀다.
+        bonusPoint += p.bonusPoint;  // 제품의 보너스 점수를 추가한다.
+        System.out.println(p + "을/를 구입하셨습니다.");
+      }
+    }
+
+    class Ex7_8 {
+      public static void main(String args[]) {
+        Buyer b = new Buyer();
+
+        b.buy(new Tv1());
+        b.buy(new Computer());
+
+        System.out.println("현재 남은 돈은 " + b.money + "만원입니다.");
+        System.out.println("현재 보너스점수는 " + b.bonusPoint + "점입니다.");
+      }
+    }
+    ```
+  - Ex7_8 Result
+    ```
+
+    ```
+
+
+<br>
+<hr>
+<br>
+
+[]()
 
 
 ## 29. 여러 종류의 객체 배열로 다루기
@@ -225,7 +348,84 @@ import static java.lang.System.out;  // System.out을 out만으로 참조 가능
 - 다형성의 장점 : 다형적 매개변수, **하나의 배열로 여러 종류 객체 다루기**
   
 ## 30. 여러 종류의 객체 배열로 다루기 예제
-- 예제 7_9
+- Ex7_9
+    ```
+    class Product2 {
+      int price;			// 제품의 가격
+      int bonusPoint;	// 제품구매 시 제공하는 보너스점수
+
+      Product2(int price) {
+        this.price = price;
+        bonusPoint = (int)(price/10.0);
+      }
+
+      Product2() {} // 기본 생성자
+    }
+
+    class Tv2 extends Product2 {
+      Tv2() {  super(100);	 }
+
+      public String toString() { return "Tv"; }
+    }
+
+    class Computer2 extends Product2 {
+      Computer2() { super(200); }
+      public String toString() { return "Computer"; }
+    }
+
+    class Audio2 extends Product2 {
+      Audio2() { super(50); }
+      public String toString() { return "Audio"; }
+    }
+
+    class Buyer2 {			  // 고객, 물건을 사는 사람
+      int money = 1000;	  // 소유금액
+      int bonusPoint = 0; // 보너스점수
+      Product2[] cart = new Product2[10];   // 구입한 제품을 저장하기 위한 배열
+      int i =0;			  // Product배열에 사용될 카운터
+
+      void buy(Product2 p) {
+        if(money < p.price) {
+          System.out.println("잔액이 부족하여 물건을 살 수 없습니다.");
+          return;
+        }
+
+        money -= p.price;             // 가진 돈에서 구입한 제품의 가격을 뺀다.
+        bonusPoint += p.bonusPoint;   // 제품의 보너스 점수를 추가한다.
+        cart[i++] = p;                // 제품을 Product[] cart에 저장한다.
+        System.out.println(p + "을/를 구입하셨습니다.");
+      }
+    // 뒷 페이지에 계속됩니다.
+      void summary() {	              // 구매한 물품에 대한 정보를 요약해서 보여 준다.
+        int sum = 0;                 // 구입한 물품의 가격합계
+        String itemList ="";         // 구입한 물품목록
+
+        // 반복문을 이용해서 구입한 물품의 총 가격과 목록을 만든다.
+        for(int i=0; i<cart.length;i++) {
+          if(cart[i]==null) break;
+          sum += cart[i].price;
+          itemList += cart[i] + ", ";
+        }
+        System.out.println("구입하신 물품의 총금액은 " + sum + "만원입니다.");
+        System.out.println("구입하신 제품은 " + itemList + "입니다.");
+      }
+    }
+
+    class Ex7_9 {
+      public static void main(String args[]) {
+        Buyer2 b = new Buyer2();
+
+        b.buy(new Tv2());
+        b.buy(new Computer2());
+        b.buy(new Audio2());
+        b.summary();
+      }
+    }
+    ```
+  - Ex7_9 Result
+    ```
+
+    ```
 
 
 <br>
