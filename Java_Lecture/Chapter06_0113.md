@@ -1,7 +1,9 @@
 # **Object-oriented Programming 1**
   
 <br>
-    
+
+[[자바의 정석 - 기초편] ch6-1 객체지향 언어](https://www.youtube.com/watch?v=CXuA31XcBZ0&list=PLW2UjW795-f5JPTsYHGAawAck9cQRw5TD&index=1)   
+
 ## 01. 객체지향 언어
 >객체지향 언어 = 프로그래밍 언어 + 객체지향개념(규칙)
 - 80년대 초, 소프트웨어의 위기 : 빠른 변화를 못 쫓아감  
@@ -17,6 +19,8 @@
 <br>
 <hr>
 <br>
+
+[[자바의 정석 - 기초편] ch6-2~4 클래스와객체](https://www.youtube.com/watch?v=jnhvQr1iDRE&list=PLW2UjW795-f5JPTsYHGAawAck9cQRw5TD&index=2)
 
 ## 02. 클래스와 객체
 - **클래스**
@@ -70,6 +74,8 @@
 <hr>
 <br>
 
+[[자바의 정석 - 기초편] ch6-5 한파일 여러 클래스 작성하기](https://www.youtube.com/watch?v=hTHFeUTyIEo&list=PLW2UjW795-f5JPTsYHGAawAck9cQRw5TD&index=3)
+
 ## 05. 한 파일에 여러 클래스 작성하기
 - 하나의 소스파일에는 하나의 클래스만 작성하는 것이 바람직
 - 소스파일의 이름은 ```public class```의 이름과 일치
@@ -83,6 +89,8 @@
 <br>
 <hr>
 <br>
+
+[[자바의 정석 - 기초편] ch6-6, 7 객체의 생성과 사용](https://www.youtube.com/watch?v=p1ZZnM715ao&list=PLW2UjW795-f5JPTsYHGAawAck9cQRw5TD&index=4)
 
 ## 06. 객체의 생성과 사용
 > 인스턴스는 참조변수를 통해서만 다룰 수 있으며, 참조변수의 타입은 인스턴스의 타입과 일치해야 함
@@ -222,6 +230,8 @@
 <hr>
 <br>
 
+[[자바의 정석 - 기초편] ch6-8 객체배열](https://www.youtube.com/watch?v=GSVbcmVw1i0&list=PLW2UjW795-f5JPTsYHGAawAck9cQRw5TD&index=5)
+
 ## 08. 객체배열
 > 객체배열 = 참조변수 배열
 - 객체를 배열로 다루는 것으로 객체 배열 안에 객체의 주소가 저장됨
@@ -254,6 +264,8 @@
 <br>
 <hr>
 <br>
+
+[[자바의 정석 - 기초편] ch6-9,10 클래스의 정의](https://www.youtube.com/watch?v=ML4CO32-bts&list=PLW2UjW795-f5JPTsYHGAawAck9cQRw5TD&index=6)
 
 ## 09. 클래스의 정의(1) - 데이터와 함수의 결합
 > 클래스 = 데이터 + 함수
@@ -294,6 +306,8 @@
 <hr>
 <br>
 
+[[자바의 정석 - 기초편] ch6-11 선언위치 변수종류](https://www.youtube.com/watch?v=qA0D-nAcAvQ&list=PLW2UjW795-f5JPTsYHGAawAck9cQRw5TD&index=7)
+
 ## 11. 선언위치에 따른 변수의 종류
 > 클래스 변수, 인스턴스 변수, 지역변수
 <center> 
@@ -327,6 +341,8 @@
 <br>
 <hr>
 <br>
+
+[[자바의 정석 - 기초편] ch6-12,13 클래스변수 인스턴스변수](https://www.youtube.com/watch?v=frKHrnsCoS4&list=PLW2UjW795-f5JPTsYHGAawAck9cQRw5TD&index=8)
 
 ## 12. 클래스 변수와 인스턴스 변수
 > 인스턴스 변수는 인스턴스가 생성될 때마다 생성되므로 인스턴스마다 각기 다른 값을 유지할 수 있지만, 클래스 변수는 모든 인스턴스가 하나의 저장공간을 공유하므로, 항상 공통된 값을 가짐

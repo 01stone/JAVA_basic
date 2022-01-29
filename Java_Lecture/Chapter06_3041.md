@@ -154,11 +154,12 @@
 
 - Ex6_11
     ```
-    class Data_1 {
+    class Data_1 {  // 생성자가 하나도 없음
+                    // 컴파일러가 기본 생성자 자동 추가
       int value;
     }
 
-    class Data_2 {
+    class Data_2 { 
       int value;
 
       Data_2(int x) {   // 매개변수가 있는 생성자.
@@ -170,6 +171,8 @@
       public static void main(String[] args) {
         Data_1 d1 = new Data_1();
         Data_2 d2 = new Data_2(); // compile error발생
+                                  // 기본 생성자 호출
+                                  // Data_2 생성자가 없음
       }
     }
     ```
@@ -178,22 +181,128 @@
 
     ```
 
-
-
 ## 34. 매개변수가 있는 생성자
+```
+class Car {
+	String color;     // 색상
+	String gearType;  // 변속기 종류 : auto, manual
+	int door;         // 문의 개수
+
+	Car() {}                          // 기본 생성자
+	Car(String c, String g, int d) {  // 매개변수 있는 생성자
+		color = c;
+		gearType = g;
+		door = d;
+	}
+}
+```
+- iv 초기화
+  ```
+  Car c = new Car();
+  c.color = "white";
+  c.gearType = "auto";
+  c.door = 4;
+
+  → Car c = new Car("white", "auto", 4);
+  ```
+- 참조변수 ```c``` 생성  
+   → ```new``` 연산자가 객체 생성  
+  → 생성자 호출 (객체 초기화)  
+  → 대입연산자가 객체 주소(```new``` 연산자의 반환값)를 참조변수```c```에 저장
+
+  <center>
+      <img src="./image/Chap6_34_1.PNG" height=100% width=100%>
+  </center>
+
+
 ## 35. 매개변수가 있는 생성자 예제
-- 순서 유의
-- 예제 6-12
+- 생성자를 활용하면 보다 간결하고 직관적인 객체지향적 코드를 작성할 수 있음
+- 인스턴스를 생성할 때는 다음의 2가지 사항을 결정해야 함
+  - 클래스 : 어떤 클래스의 인스턴스를 생성할 것인가?
+  - 생성자 : 선택한 클래스의 어떤 생성자로 인스턴스를 생성할 것인가?
+
+- Ex6_12
+    ```
+    class Car {
+      String color;		// 색상
+      String gearType;	// 변속기 종류 - auto(자동), manual(수동)
+      int door;			// 문의 개수
+
+      Car() {}
+
+      Car(String c, String g, int d) {
+        color = c;
+        gearType = g;
+        door = d;
+      }
+    }
+
+    class Ex6_12 {
+      public static void main(String[] args) {
+        Car c1 = new Car();
+        c1.color    = "white";
+        c1.gearType = "auto";
+        c1.door = 4;
+
+        Car c2 = new Car("white", "auto", 4);
+
+        System.out.println("c1의 color=" + c1.color + ", gearType=" + c1.gearType+ ", door="+c1.door);
+        System.out.println("c2의 color=" + c2.color + ", gearType=" + c2.gearType+ ", door="+c2.door);
+      }
+    }
+    ```
+  - Ex6_12 Result
+    ```
+
+    ```
 
 
+<br>
+<hr>
+<br>
 
+[[자바의 정석 - 기초편]ch6-36,37 생성자 this() 참조변수 this](https://www.youtube.com/watch?v=LqCkLdlcC7M&list=PLW2UjW795-f5JPTsYHGAawAck9cQRw5TD&index=18) 
 
 
 ## 36. 생성자에서 다른 생성자 호출하기 -  ```this()```
 > 생성자에서 다른 생성자 호출할 때 사용 (코드 중복 제거)
 > 다른 생성자 호출시 첫 줄에서만 사용가능
 
-- 예제 6-13
+- Ex6_13
+    ```
+    class Car2 {
+      String color;		// 색상
+      String gearType;	// 변속기 종류 - auto(자동), manual(수동)
+      int door;			// 문의 개수
+
+      Car2() {
+        this("white", "auto", 4);
+      }
+
+      Car2(String color) {
+        this(color, "auto", 4);
+      }
+
+      Car2(String color, String gearType, int door) {
+        this.color = color;
+        this.gearType = gearType;
+        this.door = door;
+      }
+    }
+    class Ex6_13 {
+      public static void main(String[] args) {
+        Car2 c1 = new Car2();	
+        Car2 c2 = new Car2("blue");
+
+        System.out.println("c1의 color=" + c1.color + ", gearType=" + c1.gearType+ ", door="+c1.door);
+        System.out.println("c2의 color=" + c2.color + ", gearType=" + c2.gearType+ ", door="+c2.door);
+      }
+    }
+    ```
+  - Ex6_13 Result
+    ```
+
+    ```
 
 ## 37. 객체 자신을 가리키는 참조변수  -  ```this```
 > 인스턴스 자신을 가리키는 참조변수, 인스턴스 주소가 저장되어 있음    
