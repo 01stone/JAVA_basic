@@ -1,6 +1,8 @@
 # **Object-oriented Programming 1**
   
 <br>
+
+[[자바의 정석 - 기초편] ch6-14~16 메서드란? 메서드의 선언부와 구현부](https://www.youtube.com/watch?v=GXo3Ej24974&list=PLW2UjW795-f5JPTsYHGAawAck9cQRw5TD&index=9)
     
 ## 14. 메서드란?
 - 메서드
@@ -70,6 +72,8 @@
 <hr>
 <br>
 
+[[자바의 정석 - 기초편] ch6-17~19 메서드호출](https://www.youtube.com/watch?v=6_GxMvWbkXw&list=PLW2UjW795-f5JPTsYHGAawAck9cQRw5TD&index=10)
+
 ## 17. 메서드의 호출
 > 메서드를 호출해야 구현부```{}```의 문장들이 수행됨
 - 메서드 호출 방법 : ```메서드이름(값1, 값2, ...);```
@@ -133,6 +137,8 @@
 <hr>
 <br>
 
+[[자바의 정석 - 기초편] ch6-20,21 return문, 반환값](https://www.youtube.com/watch?v=CiEYqbwgqZ0&list=PLW2UjW795-f5JPTsYHGAawAck9cQRw5TD&index=11)
+
 ## 20. return문
 > 실행 중인 메서드를 종료하고 호출한 곳을 되돌아감
 - 원래는 반환값의 유무에 관계없이 모든 메서드에는 적어도 1개의 ```retrun```문이 있어야 함
@@ -152,9 +158,12 @@
 <center>
     <img src="./image/Chap6_21_1.PNG" height=90% width=90%>
 </center>
+
 <br>
 <hr>
 <br>
+
+[[자바의 정석 - 기초편] ch6-22 호출스택](https://www.youtube.com/watch?v=-mqL3LJ4iVc&list=PLW2UjW795-f5JPTsYHGAawAck9cQRw5TD&index=12)
 
 ## 22. 호출스택(call stack)
 > 스택(stack) : 밑이 막힌 상자, 위에 차곡차곡 쌓임
@@ -208,6 +217,8 @@
 <hr>
 <br>
 
+[[자바의 정석 - 기초편] ch6-23 기본형매개변수](https://www.youtube.com/watch?v=6K_7XKJds7k&list=PLW2UjW795-f5JPTsYHGAawAck9cQRw5TD&index=13)
+
 ## 23. 기본형 매개변수 ☆
 > <span style='color:red'>기본형 매개변수 - 변수의 값을 읽기만 할 수 있다 (only read)</span>  
 > 참조형 매개변수 - 변수의 값을 읽고 변경할 수 있다 (read & write)
@@ -249,6 +260,8 @@
 <hr>
 <br>
 
+[[자바의 정석 - 기초편] ch6-24,25 참조형매개변수, 참조형 반환타입](https://www.youtube.com/watch?v=c9rXj3b9rKI&list=PLW2UjW795-f5JPTsYHGAawAck9cQRw5TD&index=14)
+
 ## 24. 참조형 매개변수 ☆
 > 기본형 매개변수 - 변수의 값을 읽기만 할 수 있다 (only read)   
 > <span style='color:red'>참조형 매개변수 - 변수의 값을 읽고 변경할 수 있다 (read & write)</span> 
@@ -271,7 +284,7 @@
             System.out.println("main() : x = " + d.x);
         }
 
-        static void change(Data2 d) { // ÂüÁ¶Çü ¸Å°³º¯¼ö
+        static void change(Data2 d) { 
             d.x = 1000;
             System.out.println("change() : x = " + d.x);
         }
@@ -317,6 +330,8 @@
 <br>
 <hr>
 <br>
+
+[[자바의 정석 - 기초편] ch6-26~29 static메서드와 인스턴스 메서드](https://www.youtube.com/watch?v=Fl4TzjPKAMU&list=PLW2UjW795-f5JPTsYHGAawAck9cQRw5TD&index=15)
 
 ## 26. static 메서드와 인스턴스 메서드
 > 메서드 앞에 ```static```이 붙어있으면 클래스메서드(iv 사용x), 붙어있지 않으면 인스턴스메서드(iv 사용)  
