@@ -7,15 +7,38 @@
 ## 15. import 문
 > 클래스를 사용할 때 패키지이름을 생략할 수 있음
 - 컴파일러에게 클래스가 속한 패키지를 알려줌
-- ```java.lang```패키지의 클래스는 import하지 않고도 사용할 수 있음
+  
+  <center>
+    <img src="./image/Chap7_15_1.PNG" height=70% width=70%>
+  </center>
+  
+  - IntelliJ 단축키 : ```Ctrl``` + ```Alt``` + ```o```
+- ```java.lang```패키지의 클래스는 ```import```하지 않고도 사용할 수 있음
+  - ```String```, ```Object```, ```System```, ```Thread```, ...
+    
+    ```
+    import java.lang.*;  // 생략 가능
+    
+    class ImportTest2 {
+      public static void main(String[] args) {
+        System.out.println("Hello World!");
+      }
+    }
+    ``` 
 - import문을 선언하는 방법
+  - ```*``` : 패키지에 있는 모든 클래스
+  
     ```
     import 패키지명.클래스명;
+    or
     import 패키지명.*
     ```
 - import문은 패키지문과 클래스선언의 사이에 선언
+  <center>
+    <img src="./image/Chap7_15_2.PNG" height=90% width=90%>
+  </center>
 
-- import문은 컴파일 시에 처리되므로 프로그램의 성능에 영향 없음
+- import문은 컴파일 시에 처리되므로 프로그램의 성능에 영향없음
     ```
     import java.util.Calendar;
     import java.util.Date;
@@ -33,7 +56,17 @@
     import java.*;      // java 패키지의 모든 클래스 (패키지는 포함x)
     ```
 - 이름이 같은 클래스가 속한 두 패키지를 import 할 때는 클래스 앞에 패키지 명을 붙여줘야 함
-
+  ```
+  import java.sql.*;   // java.sql.Date
+  import java.util.*;  // java.util.Date
+                       // 클래스 이름 동일
+  
+  class ImportTest {
+    public static void main(String[] args) {
+      java.util.Date today = new java.util.Date();
+    }
+  }
+  ``` 
 
 ## 16. static import 문
 > static멤버를 사용할 때 클래스 이름을 생략할 수 있게 해줌
@@ -42,6 +75,10 @@
 import static java.lang.Integer.*;   // Integer클래스의 모든 static 메서드
 import static java.lang.Math.random; // Math.random()만, 괄호 안붙임
 import static java.lang.System.out;  // System.out을 out만으로 참조 가능
+```
+```
+System.out.println(Math.random()); // Math 생략 가능
+→ out.println(random());
 ```
 - Ex7_6
     ```
