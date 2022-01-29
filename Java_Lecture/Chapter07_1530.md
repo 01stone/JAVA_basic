@@ -106,7 +106,7 @@ System.out.println(Math.random()); // Math 생략 가능
 <hr>
 <br>
 
-[]()
+[[자바의정석 - 기초편 ] ch7-17~20 제어자, static, final, abstract](https://www.youtube.com/watch?v=Hmu7YH8AXmI&list=PLW2UjW795-f5JPTsYHGAawAck9cQRw5TD&index=27)
 
 
 ## 17. 제어자(modifier)
