@@ -236,8 +236,23 @@ System.out.println(Math.random()); // Math 생략 가능
 
 
 ## 23. 다형성(polymorphism) ☆☆☆
-> 여러 가지 형태를 가질 수 있는 능력
-- **조상 타입 참조변수로 자손 타입 객체를 다루는 것**
+> **조상 타입 참조변수로 자손 타입 객체를 다루는 것**
+
+- 여러 가지 형태를 가질 수 있는 능력
+
+    <center>
+      <img src="./image/Chap7_23_1.PNG" height=60% width=60%>
+    </center>
+    <center>
+      <img src="./image/Chap7_23_2.PNG" height=60% width=60%>
+    </center>
+
+    - 지금까지 참조변수와 인스턴스 타입이 일치했음
+    - 다형성은 불일치해도 ok
+  
+      ```
+      Tv t = new SmartTv();  // 타입 불일치
+      ```
 
 - 객체와 참조변수의 타입이 일치할 때와 일치하지 않을 때의 차이?
     ```
