@@ -13,9 +13,11 @@
   </center>
   
   - IntelliJ 단축키 : ```Ctrl``` + ```Alt``` + ```o```
+  
       <center>
         <img src="./image/Chap7_15_0.PNG" height=70% width=70%>
       </center>
+
 - ```java.lang```패키지의 클래스는 ```import```하지 않고도 사용할 수 있음
   - ```String```, ```Object```, ```System```, ```Thread```, ...
     
@@ -401,25 +403,41 @@ System.out.println(Math.random()); // Math 생략 가능
 
 
 ## 26. instanceof 연산자
-> 참조변수의 형변환 가능여부 확인에 사용, 가능하면 ture 반환
+> 참조변수의 **형변환 가능여부 확인**에 사용, 가능하면 ```ture``` 반환
 - 형변환 전에 반드시 ```instanceof```로 확인
+    ```
+    void doWork(Car c) {
+      if (c instanceof FireEngine) {    // 1. 형변환이 가능한지 확인
+        FireEngine fe = (FireEngine)c;  // 2. 형변환
+        fe.water();
+      }
+    }
+    ```
   - 형변환 하는 이유는 인스턴스의 원래 기능을 모두 사용하기 위해
-  - Car 타입의 리모콘인 c로는 water()를 호출할 수 없으니
-  - 리모콘을 FireEngine타입으로 바꿔서 water() 호출
+  - ```Car``` 타입의 리모콘인 ```c```로는 ```water()```를 호출할 수 없으니
+  - 리모콘을 ```FireEngine```타입으로 바꿔서 ```water()``` 호출
+  
+    <center>
+      <img src="./image/Chap7_26_1.PNG" height=20% width=20%>
+    </center> 
+  ```
+  FireEngine fe = new FireEngine();
+
+  System.out.println(fe instanceof Object);      // true
+  System.out.println(fe instanceof Car);         // true
+  System.out.println(fe instanceof FireEngine);  // true
 
 
-- 참조변수를 변경함으로써 사용할 수 있는 멤버의 개수를 조절하기 위해 참조변수의 형변환을 함
-- 참조변수를 형변환하기 전에 형변환 가능 여부를 확인할 때 ```instanceof``` 연산자 사용
-
-
-
+  Object obj = (Object)fe;  // ok
+  Car    c   = (car)fe;     // ok
+  ```
 
 
 <br>
 <hr>
 <br>
 
-[]()
+[[자바의 정석 - 기초편] ch7-27,28 매개변수다형성](https://www.youtube.com/watch?v=U-VGYYH-obM&list=PLW2UjW795-f5JPTsYHGAawAck9cQRw5TD&index=34)
 
 
 ## 27. 매개변수의 다형성
@@ -427,8 +445,15 @@ System.out.println(Math.random()); // Math 생략 가능
 - 다형성의 장점 : **다형적 매개변수**, 하나의 배열로 여러 종류 객체 다루기
 - 다형성 
   - 조상타입의 참조변수로 자손객체 다루기
-  - 참조변수의 형변환 - 리모콘 변경(사용 가능한 맴버 개수 조절)
-  - instanceof : 형변환 가능여부 확인
+  - 참조변수의 형변환 : 사용 가능한 맴버 개수 조절 (리모콘 변경)
+  - ```instanceof``` : 형변환 가능여부 확인
+
+<center>
+  <img src="./image/Chap7_27_1.PNG" height=90% width=90%>
+</center> 
+<center>
+  <img src="./image/Chap7_27_2.PNG" height=90% width=90%>
+</center> 
 
 ## 28. 매개변수의 다형성 예제
 - Ex7_8
@@ -497,13 +522,29 @@ System.out.println(Math.random()); // Math 생략 가능
 <hr>
 <br>
 
-[]()
+[[자바의 정석 - 기초편] ch7-29,30 여러 종류의 객체를 배열로 다루기](https://www.youtube.com/watch?v=pcd29KSrql8&list=PLW2UjW795-f5JPTsYHGAawAck9cQRw5TD&index=35)
 
 
 ## 29. 여러 종류의 객체 배열로 다루기
 > 조상타입의 배열에 자손들의 객체를 담을 수 있음
 - 다형성의 장점 : 다형적 매개변수, **하나의 배열로 여러 종류 객체 다루기**
   
+<center>
+  <img src="./image/Chap7_29_1.PNG" height=90% width=90%>
+</center> 
+
+
+- ```Vector``` 클래스 : 가변배열기능
+    ```
+    public class Vector extends AbstractList
+        implements List, Cloneable, java.io.Serializable {
+          protected Object elementData[];
+           ...
+        }
+    ```
+    - ```Object[]``` 배열이 존재
+    - 모든 종류의 객체를 저장할 수 있음
+
 ## 30. 여러 종류의 객체 배열로 다루기 예제
 - Ex7_9
     ```
