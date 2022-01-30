@@ -181,12 +181,12 @@ System.out.println(Math.random()); // Math 생략 가능
 
 
 ## 21. 접근 제어자 (access modifier)
-> private : **같은 클래스** 내에서만 접근 가능  
-> (default) : **같은 패키지** 내에서만 접근 가능  
-> protected : **같은 패키지** 내에서, 그리고 **다른 패키지의 자손클래스**에서 접근 가능  
-> public : **접근 제한이 전혀 없음**  
+> ```private``` : **같은 클래스** 내에서만 접근 가능  
+> ```(default)``` : **같은 패키지** 내에서만 접근 가능  
+> ```protected``` : **같은 패키지** 내에서, 그리고 **다른 패키지의 자손클래스**에서 접근 가능  
+> ```public``` : **접근 제한이 전혀 없음**  
 
-- public > protected > (default) > private
+- ```public``` > ```protected``` > ```(default)``` > ```private```
     
     <center>
       <img src="./image/Chap7_21_1.PNG" height=70% width=70%>
@@ -259,6 +259,10 @@ System.out.println(Math.random()); // Math 생략 가능
     SmartTv s = new SmartTv(); // 참조변수와 인스턴스 타입이 일치
     Tv t = new SmartTv();      // 조상타입 참조변수로 자손타입 인스턴스 참조
     ```
+    <center>
+      <img src="./image/Chap7_23_3.PNG" height=100% width=100%>
+    </center>
+
   - 스마트티비 리모콘으로 스마트티비(인스턴스)를 보는 것
   - 리모콘의 버튼(멤버) 개수 : 7개 (5개는 티비, 2개는 스마트티비)
   - 스마트티비 리모콘으로 7개를 모두 사용 가능 (모든 기능 사용 가능)
@@ -272,11 +276,15 @@ System.out.println(Math.random()); // Math 생략 가능
     Tv t = new SmartTv();
     SmartTv s = new Tv();   // 에러
     ```
+    <center>
+      <img src="./image/Chap7_23_4.PNG" height=50% width=50%>
+    </center>
+
     - 기능이 7개인데 버튼이 5개인 것은 가능
     - 버튼이 7개인데 기능이 5개인 것은 불가능 (없는 것 호출해서 error)
 
 - 참조변수의 타입은 인스턴스의 타입과 반드시 일치하지 않아도 됨
-- 참조변수가 조상타입일 때 자손타입일 때의 차이는 사용할 수 있는 멤버의 갯수
+- 참조변수가 조상타입일 때 자손타입일 때의 차이는 사용할 수 있는 멤버의 개수
 - 자손 타입의 참조변수로 조상타입의 객체를 가리킬 수 없음
 
 
@@ -285,15 +293,60 @@ System.out.println(Math.random()); // Math 생략 가능
 <hr>
 <br>
 
-[]()
-[]()
+[[자바의 정석 - 기초편] ch7-24,25 참조변수의형변환(1)](https://www.youtube.com/watch?v=XP8zpt-yFZs&list=PLW2UjW795-f5JPTsYHGAawAck9cQRw5TD&index=31)  
+[[자바의 정석 - 기초편] ch7-24,25 참조변수의형변환(2)](https://www.youtube.com/watch?v=3lSPC37IaNQ&list=PLW2UjW795-f5JPTsYHGAawAck9cQRw5TD&index=32)
 
 
 ## 24. 참조변수의 형변환
-> 사용할 수 있는 멤버의 갯수를 조절하는 것
+> 사용할 수 있는 멤버의 개수를 조절하는 것
 - 기본형의 형변환은 값이 바뀜
 - **조상 자손 관계의 참조변수는 서로 형변환 가능**
-  
+
+    ```
+    class Car {}
+    class FireEngine extends Car {}
+    class Ambulance  extends Car {}
+    ```
+
+    <center>
+      <img src="./image/Chap7_24_1.PNG" height=40% width=40%>
+    </center>
+
+    ```
+     class Car {
+      String color;
+      int door;
+
+      void drive() {  // 운전하는 기능
+        System.out.println("drive, Brrrr~");
+      }
+
+      void stop() {   // 멈추는 기능	
+        System.out.println("stop!!!");	
+      }
+    }
+
+    class FireEngine extends Car {  // 소방차
+      void water() {	           // 물을 뿌리는 기능
+        System.out.println("water!!!");
+      }
+    }
+    ```
+    
+    ```
+    FireEngine f = new FireEngine();
+
+    Car c = (Car)f;                 // 조상인 Car타입으로 형변환 (생략가능)
+    FireEngine f2 = (FireEngine)c;  // 자손인 FireEngine타입으로 형변환 (생략불가)
+    Ambulance a = (Ambulance)f;     // error
+                                    // 상속관계가 아닌 클래스 간의 형변환 불가
+    ```
+    <center>
+      <img src="./image/Chap7_24_2.PNG" height=34% width=34%>
+      <img src="./image/Chap7_24_3.PNG" height=29% width=29%>
+      <img src="./image/Chap7_24_4.PNG" height=34% width=34%>
+    </center>
+
 ## 25. 참조변수의 형변환 예제
 - Ex7_7
     ```
@@ -343,7 +396,8 @@ System.out.println(Math.random()); // Math 생략 가능
 <hr>
 <br>
 
-[]()
+[[자바의 정석 - 기초편] ch7-26 instanceof 연산자](https://www.youtube.com/watch?v=YvCgrZQU4EM&list=PLW2UjW795-f5JPTsYHGAawAck9cQRw5TD&index=33)
+
 
 
 ## 26. instanceof 연산자
@@ -354,7 +408,7 @@ System.out.println(Math.random()); // Math 생략 가능
   - 리모콘을 FireEngine타입으로 바꿔서 water() 호출
 
 
-- 참조변수를 변경함으로써 사용할 수 있는 멤버의 갯수를 조절하기 위해 참조변수의 형변환을 함
+- 참조변수를 변경함으로써 사용할 수 있는 멤버의 개수를 조절하기 위해 참조변수의 형변환을 함
 - 참조변수를 형변환하기 전에 형변환 가능 여부를 확인할 때 ```instanceof``` 연산자 사용
 
 
@@ -373,7 +427,7 @@ System.out.println(Math.random()); // Math 생략 가능
 - 다형성의 장점 : **다형적 매개변수**, 하나의 배열로 여러 종류 객체 다루기
 - 다형성 
   - 조상타입의 참조변수로 자손객체 다루기
-  - 참조변수의 형변환 - 리모콘 변경(사용 가능한 맴버 갯수 조절)
+  - 참조변수의 형변환 - 리모콘 변경(사용 가능한 맴버 개수 조절)
   - instanceof : 형변환 가능여부 확인
 
 ## 28. 매개변수의 다형성 예제
