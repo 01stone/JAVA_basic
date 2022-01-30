@@ -289,7 +289,7 @@ class Child extends Parent {
       <img src="./image/Chap7_11_2.PNG" height=100% width=100%>
     </center>
 
-- [example](././../src/PointTest.java)
+- [example : PointTest](././../src/PointTest.java)
   ```
   public class PointTest {
     public static void main(String args[]) {

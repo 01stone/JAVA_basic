@@ -13,6 +13,9 @@
   </center>
   
   - IntelliJ 단축키 : ```Ctrl``` + ```Alt``` + ```o```
+      <center>
+        <img src="./image/Chap7_15_0.PNG" height=70% width=70%>
+      </center>
 - ```java.lang```패키지의 클래스는 ```import```하지 않고도 사용할 수 있음
   - ```String```, ```Object```, ```System```, ```Thread```, ...
     
@@ -110,10 +113,19 @@ System.out.println(Math.random()); // Math 생략 가능
 
 
 ## 17. 제어자(modifier)
-> 클래스와 클래스의 멤버(멤버변수, 메서드)에 부가적인 의미 부여
-- 접근 제어자 : public, protected, (default), private
-- 그 외 : static, fianl, abstract, native, ...
-- 하나의 대상에 여러 제어자를 같이 사용 가능 (접근 제어자는 하나만)
+> 클래스와 클래스의 멤버(멤버변수, 메서드)에 부가적인 의미 부여 (형용사)
+- 접근 제어자 : ```public```, ```protected```, ```(default)```, ```private```
+- 그 외 : **```static```, ```fianl```, ```abstract```**, ```native```, ```transient```, ```synchronized```, ```volatile```, ```strictfp``` 
+- 하나의 대상에 여러 제어자를 같이 사용 가능 (**접근 제어자는 하나**만)
+    ```
+    public class ModifierTest{
+      public static final int WIDTH = 200;
+      public static void main(String[] args) {
+        System.out.println("WIDTH = " + WIDTH);
+      }
+    }
+    ```
+    - 접근 제어자를 가장 왼쪽에 
 
 
 ## 18. ```static``` - 클래스의, 공통적인
@@ -121,8 +133,11 @@ System.out.println(Math.random()); // Math 생략 가능
     <img src="./image/Chap7_18_1.PNG" height=70% width=70%>
 </center>
 
-- static 메서드는 객체 생성없이 사용 가능
-  - 객체를 필요로 하는 iv, iv 메서드 사용 불가
+<center>
+    <img src="./image/Chap7_18_2.PNG" height=70% width=70%>
+</center>
+
+- static 메서드는 객체 생성없이 사용 가능 : 객체를 필요로 하는 iv, im 사용 불가
 
 
 ## 19. ```final``` - 마지막의, 변경될 수 없는
@@ -130,13 +145,31 @@ System.out.println(Math.random()); // Math 생략 가능
     <img src="./image/Chap7_19_1.PNG" height=70% width=70%>
 </center>
 
+<center>
+    <img src="./image/Chap7_19_2.PNG" height=80% width=80%>
+</center>
+
+- 상속계층도의 최하위 클래스 
+  - ```String``` : 보안 때문. 비밀번호의 경우 문자열로 저장이 가능한데, 상속이 가능하면 자손에서 조상멤버로 접근할 수 있기 때문
+  - ```Math``` : ```Static``` 메서드 집합이므로
+
+
 ## 20. ```abstract``` - 추상의 미완성의
 <center>
     <img src="./image/Chap7_20_1.PNG" height=70% width=70%>
 </center>
 
+<center>
+    <img src="./image/Chap7_20_2.PNG" height=80% width=80%>
+</center>
+
 - 추상메서드 = 미완성메서드 = 인스턴스 생성 불가
-- 추상 클래스를 상속받아서 완전한 클래스를 만든 후, 객채 생성 가능
+  
+    ```
+    AbstractTest a = new AbstractTest();  // error
+                                          // 추상 클래스의 인스턴스 생성 불가
+    ```
+- 추상 클래스를 상속받아서 완전한(구상)클래스를 만든 후, 객채 생성 가능
 
 
 
@@ -144,7 +177,7 @@ System.out.println(Math.random()); // Math 생략 가능
 <hr>
 <br>
 
-[]()
+[[자바의 정석 - 기초편] ch7-21 접근제어자](https://www.youtube.com/watch?v=Qm08p4Vk2sw&list=PLW2UjW795-f5JPTsYHGAawAck9cQRw5TD&index=28)
 
 
 ## 21. 접근 제어자 (access modifier)
@@ -153,27 +186,45 @@ System.out.println(Math.random()); // Math 생략 가능
 > protected : **같은 패키지** 내에서, 그리고 **다른 패키지의 자손클래스**에서 접근 가능  
 > public : **접근 제한이 전혀 없음**  
 
-<center>
-    <img src="./image/Chap7_21_1.PNG" height=70% width=70%>
-</center>
-
 - public > protected > (default) > private
+    
+    <center>
+      <img src="./image/Chap7_21_1.PNG" height=70% width=70%>
+    </center>
 
+    <center>
+      <img src="./image/Chap7_21_4.PNG" height=70% width=70%>
+    </center>
 
+- [example 1 : MyParent](././../src/pkg1/MyParent.java)
+    <center>
+      <img src="./image/Chap7_21_2.PNG" height=65% width=65%>
+    </center>
+
+- [example 2 : MyParentTest2](././../src/pkg2/MyParentTest2.java)
+    <center>
+      <img src="./image/Chap7_21_3.PNG" height=100% width=100%>
+    </center>
 
 <br>
 <hr>
 <br>
 
-[]()
+[[자바의 정석 - 기초편] ch7-22 캡슐화](https://www.youtube.com/watch?v=3NuVD8eOMfc&list=PLW2UjW795-f5JPTsYHGAawAck9cQRw5TD&index=29)
 
 
 
 ## 22. 캡슐화와 접근 제어자
 - 접근 제어자를 사용하는 이유
-  - 외부로부터 데이터를 보호하기 위해서
-  - 접근 제어자를 private로 하여 외부에서 직접 접근하지 못하도록 함
+  - 외부로부터 **데이터를 보호**하기 위해서
+
+      <center>
+        <img src="./image/Chap7_22_1.PNG" height=100% width=100%>
+      </center>
+
+    - 접근 제어자를 private로 하여 외부에서 직접 접근하지 못하도록 함
     - 메서드를 통한 간접 접근 허용
+  - 외부에는 불필요한, 내부적으로만 사용되는, 부분을 감추기 위해서
 
 
 
@@ -181,10 +232,10 @@ System.out.println(Math.random()); // Math 생략 가능
 <hr>
 <br>
 
-[]()
+[[자바의 정석 - 기초편] ch7-23 다형성](https://www.youtube.com/watch?v=fw7Nm_li0pE&list=PLW2UjW795-f5JPTsYHGAawAck9cQRw5TD&index=30)
 
 
-## 23. 다형성(polymorphism) - 중요
+## 23. 다형성(polymorphism) ☆☆☆
 > 여러 가지 형태를 가질 수 있는 능력
 - **조상 타입 참조변수로 자손 타입 객체를 다루는 것**
 
