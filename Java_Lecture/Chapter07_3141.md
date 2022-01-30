@@ -157,7 +157,7 @@ abstract 리턴타입 메서드이름();
   - 공통된 부분이 있는 설계도
 
       <center>
-        <img src="./image/Chap7_34_3.PNG" height=55% width=55%>
+        <img src="./image/Chap7_34_3.PNG" height=50% width=50%>
       </center>
   
   - 객체지향개념에서 공통된 부분을 조상으로 둠 (미완성 설계도)
@@ -187,46 +187,68 @@ abstract 리턴타입 메서드이름();
 <hr>
 <br>
 
-[]()
-
-
+[[자바의 정석 - 기초편] ch7-35~37 인터페이스의 선언, 상속, 구현](https://www.youtube.com/watch?v=eS2EXUSRolk&list=PLW2UjW795-f5JPTsYHGAawAck9cQRw5TD&index=39)
 
 ## 35. 인터페이스 (interface)
 > **추상 메서드**의 집합
-- 구현된 겂이 전혀 없는 설계도. 껍데기(모든 멤버가 ```public```)
-- 추상 클래스는 일반 클래스에 추상 메서드를 가지고 있는것 (생성자, iv같은 멤버변수가 존재)
-```
-interface 인터페이스이름 {
-    public static final 타입 상수이름 = 값;
-    public abstract 메서드이름(매개변수목록);
-}
-```
+- 구현된 값이 전혀 없는 설계도. 껍데기 (모든 멤버가 ```public```)
+
+    <center>
+      <img src="./image/Chap7_35_1.PNG" height=70% width=70%>
+    </center>  
+
+  - 추상 클래스는 일반 클래스에 추상 메서드를 가지고 있는것 (생성자, iv같은 멤버변수가 존재)
+  
+  ```
+  interface 인터페이스이름 {
+      public static final 타입 상수이름 = 값;
+      public abstract 메서드이름(매개변수목록);
+  }
+  ```
+    - 모든 멤버변수는 ```public static final```, 생략 가능
+    - 모든 메서드는 ```public abstract```, 생략 가능  
+      (단, ```static```메서드와 디폴트 메서드는 JDK1.8부터 예외)  
+
 
 ## 36. 인터페이스의 상속
-> 인터페이스의 조상은 인터페이스만 가능(Object가 최고 조상 아님)
-- 다중 상속이 가능 (추상메서드는 충돌해도 문제 없음)
+> 인터페이스의 조상은 인터페이스만 가능 (```Object```가 최고 조상 아님)
+  
+- 다중 상속 가능 (추상메서드는 충돌해도 문제 없음)
 
+    <center>
+      <img src="./image/Chap7_35_2.PNG" height=70% width=70%>
+    </center>
 
 ## 37. 인터페이스의 구현
 > 인터페이스에 정의된 추상 메서드를 완성하는 것
+
 ```
 class 클래스이름 implements 인터페이스이름 {
     // 인터페이스에 정의된 추상메서드를 모두 구현해야 함
 }
 ```
-- 일부만 구현하는 경우, 클래스 앞에 abstract를 붙여야 함
 
-- 인터페이스란? 추상메서드의 집합
-- 인터페이스의 구현이란? 인터페이스의 추상메서드 몸통만들기
-- 추상클래스와 인터페이스의 공통점은? 추상메서드를 가지고 있음
-- 추상클래스와 인터페이스의 차이점은? 인터페이스는 iv를 가질 수 없음
+- example : Fighter클래스가 Fightable 인터페이스를 구현
+    ```
+    class Fighter implements Fightable {
+      public void move(int x, int y) { /* 내용 생략 */ }
+      public void attack(Unit u)     { /* 내용 생략 */ }
+    }
+    ```
+- 일부만 구현하는 경우, 클래스 앞에 abstract를 붙여야 함
+    ```
+    abstract class Fighter implements Fightable {
+      public void move(int x, int y) { /* 내용 생략 */ }
+    }
+    ```
+
   
 
 <br>
 <hr>
 <br>
 
-[]()
+[[자바의 정석 - 기초편] ch7-38인터페이스와 다형성](https://www.youtube.com/watch?v=EnBLkMYt1XQ&list=PLW2UjW795-f5JPTsYHGAawAck9cQRw5TD&index=40)
 
 ## 38. 인터페이스를 이용한 다형성
 > 인터페이스도 구현 클래스의 부모
@@ -328,3 +350,12 @@ class 클래스이름 implements 인터페이스이름 {
     ```
 
     ```
+
+
+
+
+<br>
+<hr>
+<br>
+
+Java의 정석 기초편 | 남궁성 | 도우출판
