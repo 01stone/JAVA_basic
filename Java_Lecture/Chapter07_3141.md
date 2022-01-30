@@ -2,41 +2,185 @@
   
 <br>
 
-[]()
+[[자바의 정석 - 기초편] ch7-31,32 추상 클래스, 추상 메서드](https://www.youtube.com/watch?v=9VgkoVFZvyk&list=PLW2UjW795-f5JPTsYHGAawAck9cQRw5TD&index=36)
     
 ## 31. 추상 클래스 (abstract class)
-> 미완성 설계도. 미완성 메서드를 갖고 있는 클래스
+> 미완성 설계도, 미완성(추상) 메서드를 갖고 있는 클래스
+
+```
+abstract class Player {         // 추상클래스 (미완성클래스)
+  abstract void play(int pos);  // 추상메서드 (몸통{}이 없는 미완성 메서드)
+  abstract void stop();         // 추상메서드
+}
+```
 
 - 다른 클래스 작성에 도움을 주기 위한 것. 인스턴스 생성 불가
+  
+    ```
+    Player p = new Player();  // error
+                              // 추상 클래스의 인스턴스 생성 불가
+    ```
 - 상속을 통해 추상 메서드를 완성해야 인스턴스 생성가능
+  
+    ```
+    class AudioPlayer extends Player {
+      void play(int pos) { /* 내용 생략 */ }  // 추상메서드 구현
+      void stop() { /* 내용 생략 */ }         // 추상메서드 구현
+    }
+
+    AudioPlayer ap = new AudioPlayer();       // ok
+    ```
 
 ## 32. 추상 메서드 (abstract method)
 > 미완성 메서드. **구현부(```{}```)가 없는 메서드**
+
 ```
+/* 주석을 통해 어떤 기능을 수행할 목적으로 작성했는지 설명 */
 abstract 리턴타입 메서드이름();
 ```
+
 - 꼭 필요하지만 자손마다 다르게 구현될 것으로 예상되는 경우
+    ```
+    abstract class Player {         // 추상 클래스
+      abstract void play(int pos);  // 추상 메서드
+      abstract void stop();         // 추상 메서드
+    }
+
+    class AudioPlayer extends Player {
+      void play(int pos) { /* 내용 생략 */ }  // 추상메서드 구현
+      void stop() { /* 내용 생략 */ }         // 추상메서드 구현
+    }
+
+    abstract class AbstractPlayer extends Player {
+      void play(int pos) { /* 내용 생략 */ }  // 추상메서드 구현
+    }
+    ```
 - 추상 메서드 호출 가능(호출할 때는 선언부만 필요)
-  - 상속을 통해서 자손이 완성되면 자손 객체가 생성되어 호출 가능 (인스턴스 메서드는 객체생성 후 호출 가능)
+
+    <center>
+      <img src="./image/Chap7_32_1.PNG" height=90% width=90%>
+    </center>
+
+  - 메서드는 선언부만 알면 호출 가능하므로 추상메서드도 호출 가능
+  - 상속을 통해서 자손이 완성되면 자손 객체가 생성되어 호출 가능
+  - 인스턴스 메서드는 객체생성 후 호출 가능
 
 
 <br>
 <hr>
 <br>
 
-[]()
+[[자바의 정석 - 기초편] ch7-33,34 추상클래스의작성1](https://www.youtube.com/watch?v=SBdXXWIB3To&list=PLW2UjW795-f5JPTsYHGAawAck9cQRw5TD&index=37)  
+[[자바의 정석 - 기초편] ch7-33,34 추상클래스의작성2](https://www.youtube.com/watch?v=s0gRBHqa0yg&list=PLW2UjW795-f5JPTsYHGAawAck9cQRw5TD&index=38)
 
 
 ## 33. 추상클래스의 작성
-> 여러 클래스에 공통적으로 사용될 수 있는 추상클래스를 바로 작성하거나 기존 클래스의 공통 부분을 뽑아서 추상클래스를 만듦
+> 여러 클래스에 공통적으로 사용될 수 있는 추상클래스를 바로 작성하거나   
+> 기존 클래스의 공통 부분을 뽑아서 추상클래스를 만듦
 - 코드의 중복이 제거됨
+  
+    ```
+    class Marine {  // 보병
+      int x, y;     // 현재 위치
+      void move(int x, int y) { /* 지정된 위치로 이동 */ }
+      void stop()             { /* 현재 위치에 정지 */ }
+      void stimPack()         { /* 스팀팩 사용 */ }
+    } 
+
+    class Tank {  // 탱크
+      int x, y;   // 현재 위치
+      void move(int x, int y) { /* 지정된 위치로 이동 */ }
+      void stop()             { /* 현재 위치에 정지 */ }
+      void changeMode()       { /* 공격모드 변환 */ }
+    } 
+
+    class Dropship {  // 수송선
+      int x, y;       // 현재 위치
+      void move(int x, int y) { /* 지정된 위치로 이동 */ }
+      void stop()             { /* 현재 위치에 정지 */ }
+      void load()             { /* 선택한 대상을 태움 */ }
+      void unload()           { /* 선택한 대상을 내림 */ }
+    } 
+    ```
+
+    <center>
+      <img src="./image/Chap7_34_1.PNG" height=55% width=55%>
+      <img src="./image/Chap7_34_2.PNG" height=44% width=44%>
+    </center>
 
 ## 34. 추상클래스의 작성 예제
-- 예제 7_10
+- Ex7_10
+    ```
+    public class Ex7_10 {
+      public static void main(String[] args) {
+        Unit[] group = { new Marine(), new Tank(), new Dropship() };
 
-- 추상화 <--> 구체화
-- 추상화된 코드는 구체화된 코드보다 유연, 변경에 유리
-- 이해가 안갈 때는 그냥 넘기고 조금씩 반복한다...
+        for (int i = 0; i < group.length; i++)
+          group[i].move(100, 200);
+      }
+    }
+
+    abstract class Unit {
+      int x, y;
+      abstract void move(int x, int y);
+      void stop() { /* 현재 위치에 정지 */ }
+    }
+
+    class Marine extends Unit { // 보병
+      void move(int x, int y) {
+        System.out.println("Marine[x=" + x + ",y=" + y + "]");
+      }
+      void stimPack() { /* 스팀팩을 사용한다. */ }
+    }
+
+    class Tank extends Unit { // 탱크
+      void move(int x, int y) {
+        System.out.println("Tank[x=" + x + ",y=" + y + "]");
+      }
+      void changeMode() { /* 공격모드를 변환한다. */ }
+    }
+
+    class Dropship extends Unit { // 수송선
+      void move(int x, int y) {
+        System.out.println("Dropship[x=" + x + ",y=" + y + "]");
+      }
+      void load()   { /* 선택된 대상을 태운다. */ }
+      void unload() { /* 선택된 대상을 내린다. */ }
+    }
+    ```
+  - Ex7_10 Result
+    ```
+
+    ```
+
+- example
+  - 공통된 부분이 있는 설계도
+
+      <center>
+        <img src="./image/Chap7_34_3.PNG" height=55% width=55%>
+      </center>
+  
+  - 객체지향개념에서 공통된 부분을 조상으로 둠 (미완성 설계도)
+    -  **중복이 제거**됨
+    -  설계도를 **쉽게 작성**할 수 있음
+
+      <center>
+        <img src="./image/Chap7_34_4.PNG" height=55% width=55%>
+      </center>
+
+  - 추상화된 코드는 구체화된 코드보다 유연, **관리(변경)가 용이**해짐
+
+      <center>
+        <img src="./image/Chap7_34_5.PNG" height=55% width=55%>
+      </center>    
+
+  - 추상 클래스를 단계별로 만들면 상속 받으면서 구체화 됨 (추상화 <--> 구체화)
+
+      <center>
+        <img src="./image/Chap7_34_6.PNG" height=43% width=43%>
+      </center>   
+
+
 
 
 <br>
@@ -132,4 +276,55 @@ class 클래스이름 implements 인터페이스이름 {
   2. 디폴트 메서드와 조상 클래스의 메서드 간의 충돌
      - 조상 클래스의 메서드가 상속, 디폴트 메서드 무시
 ## 41. 디폴트 메서드와 static메서드 예제
-- 예제 7_11
+- Ex7_11
+    ```
+    class Ex7_11 {
+      public static void main(String[] args) {
+        Child3 c = new Child3();
+        c.method1();
+        c.method2();
+        MyInterface.staticMethod(); 
+        MyInterface2.staticMethod();
+      }
+    }
+
+    class Child3 extends Parent3 implements MyInterface, MyInterface2 {
+      public void method1() {	
+        System.out.println("method1() in Child3"); // żŔšöśóŔĚľů
+      }			
+    }
+
+    class Parent3 {
+      public void method2() {	
+        System.out.println("method2() in Parent3");
+      }
+    }
+
+    interface MyInterface {
+      default void method1() { 
+        System.out.println("method1() in MyInterface");
+      }
+
+      default void method2() { 
+        System.out.println("method2() in MyInterface");
+      }
+
+      static void staticMethod() { 
+        System.out.println("staticMethod() in MyInterface");
+      }
+    }
+
+    interface MyInterface2 {
+      default void method1() { 
+        System.out.println("method1() in MyInterface2");
+      }
+
+      static void staticMethod() { 
+        System.out.println("staticMethod() in MyInterface2");
+      }
+    }
+    ```
+  - Ex7_11 Result
+    ```
+
+    ```
