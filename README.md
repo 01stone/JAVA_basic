@@ -91,3 +91,13 @@ YouTube강의 : [자바의 정석 - 기초편](https://www.youtube.com/watch?v=f
   
 ## 2권 
 
+<br>
+
+## git
+
+> Please enter a commit message to exlain why this mergy is necessary, especially if it merges an updated upstream into a topic branch
+- ```i``` : commit message
+- merge에 대한 message 입력
+- ```esc```
+- ```:wq```
+- ```enter```
