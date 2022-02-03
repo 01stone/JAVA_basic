@@ -93,7 +93,7 @@ YouTube강의 : [자바의 정석 - 기초편](https://www.youtube.com/watch?v=f
 
 <br>
 
-## git
+## git error
 
 > Please enter a commit message to exlain why this mergy is necessary, especially if it merges an updated upstream into a topic branch
 - ```i``` : commit message
