@@ -5,7 +5,7 @@
 [[자바의 정석 - 기초편] ch7-1,2 상속](https://www.youtube.com/watch?v=Pgutf0G3nE4&list=PLW2UjW795-f5JPTsYHGAawAck9cQRw5TD&index=20)
 
 ## 01. 상속
-> interitance    
+> inheritance    
 > 기존의 클래스로 새로운 클래스를 작성하는 것(코드의 재사용)  
 > 두 클래스를 부모와 자식으로 관계를 맺어주는 것
 
