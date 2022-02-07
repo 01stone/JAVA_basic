@@ -84,8 +84,8 @@ YouTube강의 : [자바의 정석 - 기초편](https://www.youtube.com/watch?v=f
 [week5 | Chap8 : 01 ~ 10](Java_Lecture/Chapter08_0110.md)  
 [week5 | Chap8 : 11 ~ 19](Java_Lecture/Chapter08_1119.md)  
 ### Chap 09 : java.lang패키지와 유용한 클래스
-[week6 | Chap9 : 01 ~ ]  
-[week6 | Chap9 :  ~ ]
+[week7 | Chap9 : 01 ~ 14](Java_Lecture/Chapter09_0114.md)  
+[week7 | Chap9 : 15 ~ 31](Java_Lecture/Chapter09_1531.md)
 ### 객체지향 프로그래밍 요약
 [week6 | Google docs](https://docs.google.com/document/d/1Hvbe9JM5gXNwo0WhpwogiCBSRTBPinPDR8hKotNs3hA/edit?usp=sharing)
   
