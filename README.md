@@ -95,7 +95,7 @@ YouTube강의 : [자바의 정석 - 기초편](https://www.youtube.com/watch?v=f
 [week7 | Chap10 : 01 ~ 16](Java_Lecture/Chapter10.md)
 <br>
 
-## git error
+## <span style='color=red'>git error</span>
 
 > Please enter a commit message to exlain why this mergy is necessary, especially if it merges an updated upstream into a topic branch
 - ```i``` : commit message
