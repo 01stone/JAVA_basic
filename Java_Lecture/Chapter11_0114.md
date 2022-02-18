@@ -207,20 +207,56 @@
       <img src="./image/Chap11_12_3.PNG" height=80% width=80%>
     </center>
 
-## 14. ArrayList와 LinkedList의 비교
-
 - linked list : 연결리스트, 데이터 접근성이 나쁨
   
     <center>
       <img src="./image/Chap11_12_4.PNG" height=80% width=80%>
     </center>
 
-17:00
+    ```
+    class Node {
+        Node next; 
+        Object obj; 
+    }
+    ```
 
+- doubly linked list : 이중 연결리스트, 접근성 향상
+  
+    <center>
+      <img src="./image/Chap11_12_5.PNG" height=80% width=80%>
+    </center>
 
+    ```
+    class Node {
+        Node next;      // 다음 요소
+        Node previous;  // 이전 요소
+        Object obj; 
+    }
+    ```
 
+- doubly circular linked list : 이중 원형 연결리스트
+  
+    <center>
+      <img src="./image/Chap11_12_6.PNG" height=80% width=80%>
+    </center>
 
+## 14. ArrayList와 LinkedList의 비교
 
+<center>
+  <img src="./image/Chap11_14_1.PNG" height=80% width=80%>
+</center>
+
+|컬렉션|읽기(접근시간)|추가/삭제|비고|
+|:---:|:---:|:---:|:---:|
+|ArrayList|빠르다|느리다|순차적인 추가 삭제는 더 빠름, 비효율적인 메모리 사용|
+|LinkedList|느리다|빠르다|데이터가 많을수록 접근성이 떨어짐|
+
+```
+인덱스가 n인 데이터의 주소 = 배열의 주소 + n * 데이터 타입의 크기
+```
+
+- 자료구조 (data structure)
+  - 배열 기반(연속)과 연결 기반(불연속)으로 나뉘어져 있음
 
 <br>
 <hr>
