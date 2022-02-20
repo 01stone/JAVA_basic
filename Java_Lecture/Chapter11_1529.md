@@ -135,6 +135,32 @@ Iterator it = map.entrySet().iterator(); // Set eSet = map.entrySet();
 
 
 ## 25. Array의 메서드(1) - 복사
+> 배열을 다루기 편리한 메서드(static) 제공
+
+- 배열의 출력 : ```toString()```
+  
+    ```
+    static String toString(boolean[] a)
+    static String toString(byte[] a)
+    static String toString(char[] a)
+    static String toString(short[] a)
+    static String toString(int[] a)
+    static String toString(long[] a)
+    static String toString(float[] a)
+    static String toString(double[] a)
+    static String toString(object[] a)
+    ```
+- 배열의 복사 : ```copyOf()```, ```copyOfRange()```
+  
+    ```
+    int[] arr = {0, 1, 2, 3, 4};
+    int[] arr2 = Arrays.copyOf(arr, arr.length); // arr2 = [0, 1, 2, 3, 4]
+    int[] arr3 = Arrays.copyOf(arr, 3);          // arr3 = [0, 1, 2]
+    int[] arr4 = Arrays.copyOf(arr, 7);          // arr4 = [0, 1, 2, 3, 4, 0, 0]
+    int[] arr5 = Arrays.copyOfRange(arr, 2, 4);  // arr5 = [2, 3]
+    int[] arr6 = Arrays.copyOfRange(arr, 0, 7);  // arr6 = [0, 1, 2, 3, 4, 0, 0]
+    ```
+
 ## 26. Array의 메서드(2) - 채우기, 정렬, 검색
 ## 27. Array의 메서드(3) - 비교와 출력
 ## 28. Array의 메서드(4) - 변환
