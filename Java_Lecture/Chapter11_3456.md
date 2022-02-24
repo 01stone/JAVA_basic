@@ -170,6 +170,8 @@
 
 ## 46. HashMap과 Hashtable
 > 순서 x, 중복 (키 x, 값 o)
+
+
 ## 47. HashMap의 키(key)와 값(value)
 
 <br>
