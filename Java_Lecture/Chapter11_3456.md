@@ -255,8 +255,11 @@
 </center>
 
 ## 53. Collection의 메서드 - 변경불가, 싱글톤
+
 ## 54. Collection의 메서드 - 단일 컬렉션
+
 ## 55. Collections 예제
+
 ## 56. 컬렉션 클래스 정리 & 요약
 
 
