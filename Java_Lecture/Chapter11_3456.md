@@ -247,20 +247,44 @@
 
 ## 52. Collection의 메서드 - 동기화
 > 컬렉션을 위한 메서드(static)를 제공
-> 1. 컬렉션 채우기, 복사, 정렬, 검색 : ```fill()```, ```copy()```, ```sort()```, ```binarySearch()``` 등..
-> 2. 컬렉션의 동기화 : ```synchronizedXXX()```
 
-<center>
-  <img src="./image/Chap11_52_1.PNG" height=50% width=50%>
-</center>
+1. 컬렉션 채우기, 복사, 정렬, 검색 : ```fill()```, ```copy()```, ```sort()```, ```binarySearch()``` 등..
+2. 컬렉션의 동기화 : ```synchronizedXXX()```
+
+  <center>
+    <img src="./image/Chap11_52_1.PNG" height=50% width=50%>
+  </center>
+
+
 
 ## 53. Collection의 메서드 - 변경불가, 싱글톤
 
+3. 변경불가(readOnly) 컬렉션 만들기 : ```unmodifiableXXX()```
+  <center>
+    <img src="./image/Chap11_52_2.PNG" height=50% width=50%>
+  </center>
+
+4. 싱글톤 컬렉션 민들기 : ```singletonXXX()```
+  <center>
+    <img src="./image/Chap11_52_3.PNG" height=50% width=50%>
+  </center>
+  
+  - 객체 1개만 저장
+
 ## 54. Collection의 메서드 - 단일 컬렉션
 
-## 55. Collections 예제
+5. 한 종류의 객체만 저장하는 컬랙션 만들기 : ```checkedXXX()```
+  <center>
+    <img src="./image/Chap11_52_4.PNG" height=50% width=50%>
+  </center>
 
+## 55. Collections 예제
+- 예제 11-19
+  
 ## 56. 컬렉션 클래스 정리 & 요약
+  <center>
+    <img src="./image/Chap11_52_5.PNG" height=50% width=50%>
+  </center>
 
 
 
